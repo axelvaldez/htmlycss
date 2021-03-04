@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "es-MX" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <title>{{ page.title }} - {{ site.title }}</title>
+</head>
+<body>
+  {% include header.html %}
+  {% include nav.html %}
+  
+  <main class="home">
+
+    {% for post in site.posts %}
+    <article class="post-summary">
+      <h2>
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h2>
+      <p>{{ post.tldr }}</p>
+      <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
+    </article>
+    {% endfor %}
+
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>

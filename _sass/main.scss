@@ -1,0 +1,259 @@
+// --COLOR MAP AND SEARCH FUCTION
+
+$colors: (
+  "acc1": #f03,
+  "text": #2A3258,
+  "bak1": #7B819D,
+  "bak2": #F0F1F4,
+  "bak3": #FFFFFF
+);
+
+@function color($search) {
+  @return map-get($colors, $search);
+}
+
+// OTHER VARIABLES
+
+$radius: .25rem;
+
+// --RESET AND BASIS
+
+*, ::before, ::after{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 20px;
+}
+
+// BASIC ELEMENTS
+
+body{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+  max-width: 65rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: color("text");
+  background: color("bak3");
+
+  @media (min-width: 65rem){
+    position: relative;
+    align-items: flex-end;
+
+    &::before{
+      content: "";
+      background: color("text");
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: calc(50vw - 12.5rem);
+      height: 100vh;
+    }
+
+  }
+
+}
+
+p, h1, h2, h3, h4{
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4{
+  font-weight: 600;
+
+  &:not(:first-child){
+    margin-top: 2rem;
+  }
+}
+
+p:last-child{
+  margin-bottom: 0;
+}
+
+a{
+  color: color("acc1");
+  text-decoration: none;
+}
+
+/* --HEADER */
+
+header{
+  padding: 2rem calc(50% - 22.5rem);
+  background: color("text");
+  color: color("bak2");
+
+  > *{
+    margin: 0;
+    margin-left: 2rem;
+    z-index: 1;
+  }
+
+  svg{
+    height: 2rem;
+    width: auto;
+  }
+
+  @media (min-width: 65rem){
+    position: fixed;
+    left: calc(50vw - 32.5rem);
+    top: 0;
+    width: 20rem;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+
+    svg{
+      height: 2rem;
+      width: auto;
+    }
+
+    & > *{
+      margin-left: 0;
+    }
+
+  }
+
+}
+
+/* --NAV */
+
+nav{
+  width: 100%;
+  padding: 0 calc(50% - 22.5rem);
+  margin: 0 auto;
+  font-family: "Source Sans Pro", sans-serif;
+  background: color("bak2");
+
+  ul{
+    display: flex;
+    justify-content: start;
+    margin: 0 2rem;
+    padding: 2rem 0 0;
+    list-style: none;
+  }
+
+  li{
+    margin-right: 1rem;
+  }
+
+  a{
+    color: rgba(color("text"), .6);
+    display: block;
+    padding: 0 0 .5rem;
+    text-decoration: none;
+
+    &:hover{
+      color: color("acc1");
+    }
+
+    &.current{
+      box-shadow: 0 -4px 0 color("acc1") inset;
+      color: color("text");
+    }
+
+  }
+
+  @media (min-width: 65rem){
+    margin: 0;
+    width: calc( (100% - 20rem) + (50vw - 32.5rem) );
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    left: 20rem;
+  }
+
+}
+
+/* --MAIN */
+
+main{
+  width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
+  padding: 2rem;
+
+  @media (min-width: 65rem){
+    margin: 0;
+
+    &.home{
+      padding-top: 6rem;
+    }
+
+  }
+
+}
+
+/* --FOOTER */
+
+footer{
+  position: relative;
+  width: 100%;
+  max-width: 45rem;
+  margin: auto auto 0;
+  padding: 2rem;
+  color: color("bak1");
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    height: 1px;
+    width: calc(100% - 4rem);
+    background: rgba(color("text"), .3);
+  }
+
+  p{
+    margin-bottom: 0;
+  }
+
+  a{
+    color: color("text");
+
+    &:hover{
+      color: color("acc1");
+    }
+
+  }
+
+  @media (min-width: 65rem){
+    width: 20rem;
+    position: fixed;
+    bottom: 0;
+    left: calc(50vw - 32.5rem);
+    color: color("bak1");
+
+    a{
+      color: color("bak2");
+    }
+  }
+  
+}
+
+/* --POSTS */
+
+.post-summary{
+
+  > *{
+    margin-bottom: 0;
+  }
+
+  time{
+    color: color("bak1");
+  }
+}
+
+pre > code{
+  padding: 2rem;
+  border-radius: $radius;
+}
+
+@import "highlight.scss";
