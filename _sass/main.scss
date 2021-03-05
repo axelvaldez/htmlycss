@@ -76,13 +76,18 @@ p, h1, h2, h3, h4{
   margin-bottom: 1rem;
 }
 
-h1, h2, h3, h4{
-  font-weight: 600;
+.content-main{
 
-  &:not(:first-child){
-    margin-top: 2rem;
+  h1, h2, h3, h4{
+    font-weight: 600;
+  
+    &:not(:first-child){
+      margin-top: 2rem;
+    }
   }
+
 }
+
 
 p:last-child{
   margin-bottom: 0;
@@ -93,8 +98,26 @@ small, .small{
 }
 
 a{
-  color: color("acc1");
+  color: color("text");
+  background-image: linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(color("bak1"), .5) 3px,
+    rgba(color("bak1"), .5) 5px,
+    transparent 5px);
   text-decoration: none;
+
+  &:hover{
+    color: color("acc1");
+    background-image: linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 3px,
+    rgba(color("acc1"), .5) 3px,
+    rgba(color("acc1"), .5) 5px,
+    transparent 5px);
+  }
 }
 
 /* --HEADER */
@@ -188,6 +211,7 @@ main{
       display: flex;
       flex-direction: row;
       justify-content: center;
+      align-items: flex-start;
     }
 
   }
@@ -205,6 +229,12 @@ main{
   max-width: 40rem;
   margin: 4rem auto 0 auto;
   order: 1;
+  position: sticky;
+  top: 2rem;
+
+  a{
+    border: none;
+  }
 
   @media (min-width: 64rem){
     margin: 0 4rem 0 0;
@@ -262,10 +292,10 @@ footer{
   }
 
   h2{
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 
-  time{
+  .date{
     font-size: $font-size-small;
     color: color("bak1");
   }
@@ -286,14 +316,21 @@ pre{
 
 .tag{
   font-size: $font-size-small;
-  padding: 0 .25rem;
-  margin-right: .5rem;
+  padding: 0 .5rem;
+  margin-right: .25rem;
   border-radius: $radius / 2;
   display: inline-block;
   background: color("text");
   color: color("bak3");
   text-transform: uppercase;
   font-weight: 600;
+  border: none;
+
+  &:hover{
+    color: color("bak3");
+    background: color("acc1");
+    border: none;
+  }
 }
 
 // --CARDS
@@ -322,6 +359,24 @@ pre{
   height: 5rem;
   border-radius: 50%;
   display: block;
+}
+
+// --ICONS
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: .25rem;
+  position: relative;
+  top: 2px;
+  fill: currentColor;
+}
+
+// --intro (home)
+
+.intro{
+  font-size: $font-size-2;
+  padding: 2rem 0 6rem;
 }
 
 @import "highlight.scss";
