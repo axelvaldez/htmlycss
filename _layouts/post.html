@@ -10,13 +10,28 @@
   {% include header.html %}
   
   <main>
+    <h1 class="title">{{ page.title }}</h1>
 
-    <!-- POST -->
-    <div class="post single">
-      <h1>{{ page.title }}</h1>
-      {{ content }}
+    <div class="content">
+    
+      <div class="content-main">
+        {{ content }}
+      </div>
+    
+      <div class="content-meta">
+        
+        <div class="author">
+          <img src="https://www.fillmurray.com/g/200/200/" alt="Axel Valdez" class="img-avatar">
+          <p>
+            <strong>Axel Valdez</strong><br>
+            <small>Diseñador y Front-end Developer. Hermosillo, México.</small>
+          </p>
+        </div>
+        
+        <p>Publicado en <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_long_string }}</time>, bajo la categoría <a href="" class="tag">sass</a></p>
+      </div>
+    
     </div>
-
   </main>
 
   {% include footer.html %}

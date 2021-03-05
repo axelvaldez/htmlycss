@@ -1,3 +1,7 @@
+// FONT
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 // --COLOR MAP AND SEARCH FUCTION
 
 $colors: (
@@ -15,6 +19,12 @@ $colors: (
 // OTHER VARIABLES
 
 $radius: .25rem;
+
+$font-size-1: 2.4rem;
+$font-size-2: 1.56rem;
+$font-size-3: 1.25rem;
+$font-size-4: 1rem;
+$font-size-small: .8rem;
 
 // --RESET AND BASIS
 
@@ -34,29 +44,31 @@ body{
   margin: 0 auto;
   padding: 0;
   min-height: 100vh;
-  max-width: 65rem;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-family: "Karla",sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: color("text");
   background: color("bak3");
 
-  @media (min-width: 65rem){
-    position: relative;
-    align-items: flex-end;
+}
 
-    &::before{
-      content: "";
-      background: color("text");
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: calc(50vw - 12.5rem);
-      height: 100vh;
-    }
+h1{
+  font-size: $font-size-1;
+  line-height: 1.05;
+}
 
-  }
+h2{
+  font-size: $font-size-2;
+  line-height: 1.1;
+}
 
+h3{
+  font-size: $font-size-3;
+  line-height: 1.2;
+}
+
+h4{
+  font-size: $font-size-4;
 }
 
 p, h1, h2, h3, h4{
@@ -76,6 +88,10 @@ p:last-child{
   margin-bottom: 0;
 }
 
+small, .small{
+  font-size: $font-size-small;
+}
+
 a{
   color: color("acc1");
   text-decoration: none;
@@ -84,14 +100,23 @@ a{
 /* --HEADER */
 
 header{
-  padding: 2rem calc(50% - 22.5rem);
+  padding: 2rem calc(50vw - 20rem) 0;
   background: color("text");
   color: color("bak2");
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @media (min-width: 64rem){
+    padding: 2rem calc(50vw - 30rem) 0;
+  }
+
+  @media (max-width: 34rem){
+    display: block;
+  }
 
   > *{
-    margin: 0;
-    margin-left: 2rem;
-    z-index: 1;
+    margin: 0 2rem;
   }
 
   svg{
@@ -99,44 +124,17 @@ header{
     width: auto;
   }
 
-  @media (min-width: 65rem){
-    position: fixed;
-    left: calc(50vw - 32.5rem);
-    top: 0;
-    width: 20rem;
-    min-height: 100vh;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    background: transparent;
-
-    svg{
-      height: 2rem;
-      width: auto;
-    }
-
-    & > *{
-      margin-left: 0;
-    }
-
-  }
-
 }
 
 /* --NAV */
 
 nav{
-  width: 100%;
-  padding: 0 calc(50% - 22.5rem);
-  margin: 0 auto;
-  font-family: "Source Sans Pro", sans-serif;
-  background: color("bak2");
 
   ul{
     display: flex;
     justify-content: start;
-    margin: 0 2rem;
-    padding: 2rem 0 0;
+    margin: 0;
+    padding: 0;
     list-style: none;
   }
 
@@ -145,29 +143,20 @@ nav{
   }
 
   a{
-    color: rgba(color("text"), .6);
+    color: rgba(color("bak2"), .6);
     display: block;
     padding: 0 0 .5rem;
     text-decoration: none;
 
     &:hover{
-      color: color("acc1");
+      color: color("bak3");
     }
 
     &.current{
       box-shadow: 0 -4px 0 color("acc1") inset;
-      color: color("text");
+      color: color("bak3");
     }
 
-  }
-
-  @media (min-width: 65rem){
-    margin: 0;
-    width: calc( (100% - 20rem) + (50vw - 32.5rem) );
-    padding: 0;
-    position: absolute;
-    z-index: 10;
-    left: 20rem;
   }
 
 }
@@ -176,17 +165,50 @@ nav{
 
 main{
   width: 100%;
-  max-width: 45rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem 2rem;
+  max-width: 40rem;
 
-  @media (min-width: 65rem){
-    margin: 0;
+  @media (min-width: 64rem){
+    max-width: 60rem;
+  }
 
-    &.home{
-      padding-top: 6rem;
+  .title{
+    @media (min-width: 64rem){
+      margin-bottom: 2rem;
+    }
+  }
+
+  .content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @media (min-width: 64rem){
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
 
+  }
+
+  .content-main{
+    width: 100%;
+    max-width: 40rem;
+    order: 2;
+  }
+
+}
+
+.content-meta{
+  width: 100%;
+  max-width: 40rem;
+  margin: 4rem auto 0 auto;
+  order: 1;
+
+  @media (min-width: 64rem){
+    margin: 0 4rem 0 0;
+    width: 16rem;
   }
 
 }
@@ -196,10 +218,14 @@ main{
 footer{
   position: relative;
   width: 100%;
-  max-width: 45rem;
+  max-width: 40rem;
   margin: auto auto 0;
   padding: 2rem;
   color: color("bak1");
+
+  @media (min-width: 64rem){
+    max-width: 60rem;
+  }
 
   &::before{
     content: "";
@@ -224,36 +250,78 @@ footer{
 
   }
 
-  @media (min-width: 65rem){
-    width: 20rem;
-    position: fixed;
-    bottom: 0;
-    left: calc(50vw - 32.5rem);
-    color: color("bak1");
-
-    a{
-      color: color("bak2");
-    }
-  }
-  
 }
 
 /* --POSTS */
 
 .post-summary{
+  margin-bottom: 2rem;
 
   > *{
     margin-bottom: 0;
   }
 
+  h2{
+    margin-top: 0;
+  }
+
   time{
+    font-size: $font-size-small;
     color: color("bak1");
   }
 }
 
-pre > code{
+pre{
+  margin: 2rem 0;
+
+  & > code{
+    padding: 2rem;
+    border-radius: $radius;
+    font-size: .8rem;
+  }
+
+}
+
+// --TAGS
+
+.tag{
+  font-size: $font-size-small;
+  padding: 0 .25rem;
+  margin-right: .5rem;
+  border-radius: $radius / 2;
+  display: inline-block;
+  background: color("text");
+  color: color("bak3");
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+// --CARDS
+
+.author{
+  display: grid;
+  grid-template-rows: 5rem auto;
+  grid-gap: 1rem;
+  justify-items: center;
+  margin-bottom: 1rem;
   padding: 2rem;
   border-radius: $radius;
+  background: color("bak2");
+  text-align: center;
+
+  *{
+    margin: 0;
+    line-height: 1.15;
+  }
+}
+
+// --IMAGES
+
+.img-avatar{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: block;
 }
 
 @import "highlight.scss";

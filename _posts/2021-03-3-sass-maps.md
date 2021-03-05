@@ -71,7 +71,7 @@ Y de paso creamos una funcion de búsqueda para acceder a los colores a partir d
 
 Ahora si. Nuestro problema inicial era que queríamos hacer dos cosas:
 
-## 1. Utilizar las variables de color en las propiedades de nuestra hoja de estilo.
+### 1. Utilizar las variables de color en las propiedades de nuestra hoja de estilo.
 
 Cuando queramos utilizar una de nuestras nuevas "variables" en una regla de estilo, en lugar de ```color: $color-primary``` utilizamos nuestra función de búsqueda:
 
@@ -79,7 +79,7 @@ Cuando queramos utilizar una de nuestras nuevas "variables" en una regla de esti
 color: color("primary");
 ```
 
-## 2. Tener clases para utilizar cualquier color como color de texto o de fondo directamente en nuestro HTML.
+### 2. Tener clases para utilizar cualquier color como color de texto o de fondo directamente en nuestro HTML.
 
 Ahora si podemos iterar sobre nuestro SASS Map para generar las clases de color necesarias:
 
