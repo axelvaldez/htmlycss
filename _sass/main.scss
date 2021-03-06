@@ -123,15 +123,15 @@ a{
 /* --HEADER */
 
 header{
-  padding: 2rem calc(50vw - 20rem) 0;
+  padding: 1rem calc(50vw - 20rem);
   background: color("text");
   color: color("bak2");
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 
   @media (min-width: 64rem){
-    padding: 2rem calc(50vw - 30rem) 0;
+    padding: 1rem calc(50vw - 30rem);
   }
 
   @media (max-width: 34rem){
@@ -142,9 +142,14 @@ header{
     margin: 0 2rem;
   }
 
-  svg{
+  .logo{
     height: 2rem;
     width: auto;
+    display: block;
+
+    &.bigger{
+      height: 3rem;
+    }
   }
 
 }
