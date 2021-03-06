@@ -84,6 +84,7 @@ color: color("primary");
 Ahora si podemos iterar sobre nuestro SASS Map para generar las clases de color necesarias:
 
 ```SCSS
+/* the colors */
 @each $key, $value in $colors {
   .color-#{$key}{ color: #{$value}; }
   .bg-#{$key}{ background-color: #{$value}; }

@@ -12,16 +12,35 @@
   <main class="home">
     
     <div class="intro">
-      <p class="lead">Hola, yo soy Axel, diseñador y front-end developer en Hermosillo, México, y este es un blog en español acerca de todo lo relacionado con construir sitios y aplicaciones web, pero principalmente &mdash;como el nombre lo dice&mdash; HTML y CSS.</p>
+      {{ content }}
     </div>
 
     <div class="content">
     
       <div class="content-main">
+        <h5>Notas recientes</h5>
         {% for post in site.posts %}
           <article class="post-summary">
-            <a href="" class="tag">sass</a>
             <span class="date">
+              {% include icons/calendar.svg %}
+              {% assign month = post.date | date: '%m' | minus: 1%}
+              {{ site.data.months.names[month] }}
+              {{ post.date | date: "%d, %Y" }}
+            </span>
+            <h2>
+              <a href="{{ post.url }}">
+                {{ post.title }}
+              </a>
+            </h2>
+            <p>{{ post.tldr }}</p>
+          </article>
+        {% endfor %}
+
+        <h5>Ejemplos recientes</h5>
+        {% for post in site.posts %}
+          <article class="post-summary">
+            <span class="date">
+              {% include icons/calendar.svg %}
               {% assign month = post.date | date: '%m' | minus: 1%}
               {{ site.data.months.names[month] }}
               {{ post.date | date: "%d, %Y" }}
@@ -37,14 +56,16 @@
       </div>
     
       <div class="content-meta">
-        <h3>Notas</h3>
-        <p>Artículos y notas relacionadas con técnicas para desarrollar HTML, CSS o alguna de sus variantes.</p>
+        <h5>¿Qué encuentras acá?</h5>
+        <div class="card">
+          <h3 class="mb-0">Notas</h3>
+          <p>Artículos y notas relacionadas con técnicas para desarrollar HTML, CSS o alguna de sus variantes.</p>
+        </div>
 
-        <h3>Ejemplos</h3>
-        <p>Aplicaciones prácticas de HTML y CSS con toda la explicación, o si tienes prisa, con código listo para copiar y pegar.</p>
-
-        <h3>Recursos</h3>
-        <p>Links a herramientas útiles para diseño y front-end. Usualmente cosas que yo mismo uso o he usado.</p>
+        <div class="card">
+          <h3 class="mb-0">Ejemplos</h3>
+          <p>Aplicaciones prácticas de HTML y CSS con toda la explicación, o si tienes prisa, con código listo para copiar y pegar.</p>
+        </div>
         
       </div>
     

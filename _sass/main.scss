@@ -2,19 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-// --COLOR MAP AND SEARCH FUCTION
-
-$colors: (
-  "acc1": #f03,
-  "text": #2A3258,
-  "bak1": #7B819D,
-  "bak2": #F0F1F4,
-  "bak3": #FFFFFF
-);
-
-@function color($search) {
-  @return map-get($colors, $search);
-}
 
 // OTHER VARIABLES
 
@@ -26,6 +13,8 @@ $font-size-3: 1.25rem;
 $font-size-4: 1rem;
 $font-size-small: .8rem;
 
+$shadow-soft: 0 .25rem 2rem var(--shd);
+
 // --RESET AND BASIS
 
 *, ::before, ::after{
@@ -34,6 +23,25 @@ $font-size-small: .8rem;
 
 html{
   font-size: 20px;
+  
+  --acc: #f03;
+  --txt: #2A3258;
+  --bg1: #FFF;
+  --bg2: #F0F1F4;
+  --bg3: #7B819D;
+  --bg4: #F0F1F4;
+  --shd: rgba(42, 50, 88, .15);
+
+  @media (prefers-color-scheme: dark) {
+      --acc: #f03;
+      --txt: #F0F1F4;
+      --bg1: #373B4B;
+      --bg2: #7B819D;
+      --bg3: #F0F1F4;
+      --bg4: #1B1E2B;
+      --shd: rgba(0, 0, 0, .45);
+  }
+
 }
 
 // BASIC ELEMENTS
@@ -47,8 +55,8 @@ body{
   font-family: "Karla",sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  color: color("text");
-  background: color("bak3");
+  color: var(--txt);
+  background: var(--bg1);
 
 }
 
@@ -71,7 +79,13 @@ h4{
   font-size: $font-size-4;
 }
 
-p, h1, h2, h3, h4{
+h5{
+  font-size: $font-size-small;
+  text-transform: uppercase;
+  color: var(--bg3);
+}
+
+p, h1, h2, h3, h4, h5{
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -98,43 +112,30 @@ small, .small{
 }
 
 a{
-  color: color("text");
-  background-image: linear-gradient(
-    0deg,
-    transparent 0,
-    transparent 3px,
-    rgba(color("bak1"), .5) 3px,
-    rgba(color("bak1"), .5) 5px,
-    transparent 5px);
+  color: var(--txt);
   text-decoration: none;
 
   &:hover{
-    color: color("acc1");
-    background-image: linear-gradient(
-    0deg,
-    transparent 0,
-    transparent 3px,
-    rgba(color("acc1"), .5) 3px,
-    rgba(color("acc1"), .5) 5px,
-    transparent 5px);
+    color: var(--acc);
   }
 }
 
 /* --HEADER */
 
 header{
-  padding: 1rem calc(50vw - 20rem);
-  background: color("text");
-  color: color("bak2");
+  padding: 0 calc(50vw - 20rem);
+  background: var(--bg1);
+  color: var(--txt);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  box-shadow: $shadow-soft;
 
   @media (min-width: 64rem){
-    padding: 1rem calc(50vw - 30rem);
+    padding: 0 calc(50vw - 30rem);
   }
 
-  @media (max-width: 34rem){
+  @media (max-width: 49rem){
     display: block;
   }
 
@@ -143,9 +144,14 @@ header{
   }
 
   .logo{
+    margin: 1rem 0;
     height: 2rem;
     width: auto;
     display: block;
+
+    path{
+      fill: currentColor;
+    }
 
     &.bigger{
       height: 3rem;
@@ -164,6 +170,11 @@ nav{
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @media (max-width: 49rem){
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   li{
@@ -171,18 +182,33 @@ nav{
   }
 
   a{
-    color: rgba(color("bak2"), .6);
+    color: var(--txt);
     display: block;
     padding: 0 0 .5rem;
     text-decoration: none;
 
     &:hover{
-      color: color("bak3");
+      color: var(--acc);
     }
 
     &.current{
-      box-shadow: 0 -4px 0 color("acc1") inset;
-      color: color("bak3");
+      position: relative;
+      color: var(--txt);
+
+      &:hover{
+        color: var(--txt);
+      }
+
+      &::after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: -.5rem;
+        right: -.5rem;
+        height: .25rem;
+        background: var(--acc);
+      }
+      
     }
 
   }
@@ -225,6 +251,10 @@ main{
     width: 100%;
     max-width: 40rem;
     order: 2;
+
+    a{
+      text-decoration: underline;
+    }
   }
 
 }
@@ -256,7 +286,7 @@ footer{
   max-width: 40rem;
   margin: auto auto 0;
   padding: 2rem;
-  color: color("bak1");
+  color: var(--bg3);
 
   @media (min-width: 64rem){
     max-width: 60rem;
@@ -269,7 +299,7 @@ footer{
     left: 2rem;
     height: 1px;
     width: calc(100% - 4rem);
-    background: rgba(color("text"), .3);
+    background: var(--shd);
   }
 
   p{
@@ -277,10 +307,10 @@ footer{
   }
 
   a{
-    color: color("text");
+    color: var(--txt);
 
     &:hover{
-      color: color("acc1");
+      color: var(--acc);
     }
 
   }
@@ -302,7 +332,11 @@ footer{
 
   .date{
     font-size: $font-size-small;
-    color: color("bak1");
+    color: var(--bg3);
+  }
+
+  .tag{
+    background: var(--bg3);
   }
 }
 
@@ -325,31 +359,37 @@ pre{
   margin-right: .25rem;
   border-radius: $radius / 2;
   display: inline-block;
-  background: color("text");
-  color: color("bak3");
+  background: var(--txt);
+  color: var(--bg1);
   text-transform: uppercase;
+  text-decoration: none !important;
   font-weight: 600;
   border: none;
 
   &:hover{
-    color: color("bak3");
-    background: color("acc1");
+    color: var(--bg1);
+    background: var(--acc);
     border: none;
   }
 }
 
 // --CARDS
 
+.card{
+  box-shadow: $shadow-soft;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: $radius;
+  background: var(--bg1);
+}
+
 .author{
   display: grid;
   grid-template-rows: 5rem auto;
   grid-gap: 1rem;
   justify-items: center;
-  margin-bottom: 1rem;
-  padding: 2rem;
-  border-radius: $radius;
-  background: color("bak2");
   text-align: center;
+  
 
   *{
     margin: 0;
@@ -369,9 +409,9 @@ pre{
 // --ICONS
 
 .icon {
-  width: 20px;
-  height: 20px;
-  margin-right: .25rem;
+  width: 1em;
+  height: 1em;
+  margin-right: .25em;
   position: relative;
   top: 2px;
   fill: currentColor;
@@ -382,6 +422,12 @@ pre{
 .intro{
   font-size: $font-size-2;
   padding: 2rem 0 6rem;
+}
+
+// --UTILITY CLASSES
+
+.mb-0{
+  margin-bottom: 0;
 }
 
 @import "highlight.scss";

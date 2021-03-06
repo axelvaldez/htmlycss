@@ -21,20 +21,20 @@ hue-6-2: #e6c07b
 .hljs {
   display: block;
   overflow-x: auto;
-  color: #abb2bf;
-  background: color("text");
+  color: var(--bg3);
+  background: var(--bg4);
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #5c6370;
+  color: #abb2bf;
   font-style: italic;
 }
 
 .hljs-doctag,
 .hljs-keyword,
 .hljs-formula {
-  color: #c678dd;
+  color: color("acc1");
 }
 
 .hljs-section,
@@ -42,7 +42,7 @@ hue-6-2: #e6c07b
 .hljs-selector-tag,
 .hljs-deletion,
 .hljs-subst {
-  color: #e06c75;
+  color: orange;
 }
 
 .hljs-literal {
@@ -54,7 +54,7 @@ hue-6-2: #e6c07b
 .hljs-addition,
 .hljs-attribute,
 .hljs-meta-string {
-  color: #fff;
+  color: var(--txt);
 }
 
 .hljs-built_in,
