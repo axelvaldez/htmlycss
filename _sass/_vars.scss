@@ -1,0 +1,30 @@
+$radius: .25rem;
+
+$font-size-1: 2.4rem;
+$font-size-2: 1.56rem;
+$font-size-3: 1.25rem;
+$font-size-4: 1rem;
+$font-size-small: .8rem;
+
+$shadow-soft: 0 .25rem 2rem var(--shd);
+
+html{
+  --acc: #f03;
+  --txt: #2A3258;
+  --bg1: #FFF;
+  --bg2: #F0F1F4;
+  --bg3: #7B819D;
+  --bg4: #F0F1F4;
+  --shd: rgba(42, 50, 88, .15);
+
+  @media (prefers-color-scheme: dark) {
+      --acc: #f03;
+      --txt: #F0F1F4;
+      --bg1: #373B4B;
+      --bg2: #7B819D;
+      --bg3: #F0F1F4;
+      --bg4: #1B1E2B;
+      --shd: rgba(0, 0, 0, .45);
+  }
+
+}

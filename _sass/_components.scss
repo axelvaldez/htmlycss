@@ -1,0 +1,112 @@
+/* --POST SUMMARY */
+
+.post-summary{
+    margin-bottom: 2rem;
+  
+    > *{
+      margin-bottom: 0;
+    }
+  
+    h2{
+      margin-top: 0 !important;
+    }
+  
+    .date{
+      font-size: $font-size-small;
+      color: var(--bg3);
+    }
+  
+    .tag{
+      background: var(--bg3);
+    }
+  }
+  
+  pre{
+    margin: 2rem 0;
+  
+    & > code{
+      padding: 2rem;
+      border-radius: $radius;
+      font-size: .8rem;
+    }
+  
+  }
+  
+  // --TAGS
+  
+  .tag{
+    font-size: $font-size-small;
+    padding: 0 .5rem;
+    margin-right: .25rem;
+    border-radius: $radius / 2;
+    display: inline-block;
+    background: var(--txt);
+    color: var(--bg1);
+    text-transform: uppercase;
+    text-decoration: none !important;
+    font-weight: 600;
+    border: none;
+  
+    &:hover{
+      color: var(--bg1);
+      background: var(--acc);
+      border: none;
+    }
+  }
+  
+  // --CARDS
+  
+  .card{
+    box-shadow: $shadow-soft;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: $radius;
+    background: var(--bg1);
+  }
+  
+  .author{
+    display: grid;
+    grid-template-rows: 5rem auto;
+    grid-gap: 1rem;
+    justify-items: center;
+    text-align: center;
+    
+  
+    *{
+      margin: 0;
+      line-height: 1.15;
+    }
+  }
+  
+  // --IMAGES
+  
+  .img-avatar{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: block;
+  }
+  
+  // --ICONS
+  
+  .icon {
+    width: 1em;
+    height: 1em;
+    margin-right: .25em;
+    position: relative;
+    top: 2px;
+    fill: currentColor;
+  }
+  
+  // --intro (home)
+  
+  .intro{
+    font-size: $font-size-2;
+    padding: 2rem 0 6rem;
+  }
+  
+  // --UTILITY CLASSES
+  
+  .mb-0{
+    margin-bottom: 0;
+  }

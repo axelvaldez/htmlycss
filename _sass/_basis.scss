@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*, ::before, ::after{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 20px;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Karla",sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--txt);
+  background: var(--bg1);
+
+}
+
+h1{
+  font-size: $font-size-1;
+  line-height: 1.05;
+}
+
+h2{
+  font-size: $font-size-2;
+  line-height: 1.1;
+}
+
+h3{
+  font-size: $font-size-3;
+  line-height: 1.2;
+}
+
+h4{
+  font-size: $font-size-4;
+}
+
+h5{
+  font-size: $font-size-small;
+  text-transform: uppercase;
+  color: var(--bg3);
+}
+
+p, h1, h2, h3, h4, h5{
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.content-main{
+
+  h1, h2, h3, h4{
+    font-weight: 600;
+  
+    &:not(:first-child){
+      margin-top: 2rem;
+    }
+  }
+
+}
+
+
+p:last-child{
+  margin-bottom: 0;
+}
+
+small, .small{
+  font-size: $font-size-small;
+}
+
+a{
+  color: var(--txt);
+  text-decoration: none;
+
+  &:hover{
+    color: var(--acc);
+  }
+}
