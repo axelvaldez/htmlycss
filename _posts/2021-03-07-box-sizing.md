@@ -17,9 +17,6 @@ Cuando definimos la propiedad ```box-sizing```, le decimos al browser a cuál de
 
 Si tenemos un elemento con ```width``` de 500px y ```padding``` de 50px, con ```box-sizing: content-box``` este tendrá 600px de ancho (500px + 50px + 50px), mientras que con ```border-box``` su ancho será de 500px **incluyendo** su padding.
 
-|Propiedades|Ancho resultante del elemento|
-|---|---|
-|box-sizing: content-box;<br>width: 500px;<br>padding: 50px;|600px|
-|box-sizing: border-box;<br>width: 500px;<br>padding: 50px;|500px|
+![Comparativa entre brder-box y content-box](/assets/img/posts/box-sizing-example-2.png)
 
 No hay una propiedad más correcta que otra, sin embargo ```box-sizing: border-box``` es la preferida por la mayoría de los que desarrollamos sitios y aplicaciones web porque el tamaño que definamos en la propiedad width será el tamaño total del elemento, y no tenemos que estar descontando los tamaños de padding y el border a la hora de escribir nuestro CSS.

@@ -162,4 +162,14 @@
   .content-main img{
     max-width: 100%;
     height: auto;
+    margin: 1rem auto;
+
+    @media (prefers-color-scheme: dark){
+      opacity: .7;
+      transition: ease-in all 100ms;
+
+      &:hover{
+        opacity: 1;
+      }
+    }
   }
