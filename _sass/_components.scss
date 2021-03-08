@@ -31,6 +31,13 @@
     }
   
   }
+
+  :not(pre) > code{
+    font-size: $font-size-small;
+    padding: .25rem;
+    background: var(--bg2);
+    border-radius: $radius;
+  }
   
   // --TAGS
   
@@ -109,4 +116,42 @@
   
   .mb-0{
     margin-bottom: 0;
+  }
+
+  // --TABLES
+
+  table{
+    border-collapse: collapse;
+    margin: 2rem 0;
+
+    th{
+      border-bottom: 2px solid var(--txt);
+      padding: .5rem 2rem;
+      text-align: left;
+      
+      &:first-child{
+        padding-left: 0;
+      }
+
+    }
+
+    td{
+      border-bottom: 1px solid var(--txt);
+      padding: .5rem 2rem;
+      text-align: left;
+      vertical-align: top;
+
+      &:first-child{
+        padding-left: 0;
+      }
+      
+    }
+
+  }
+
+  // --IMAGES
+
+  .content-main img{
+    max-width: 100%;
+    height: auto;
   }
