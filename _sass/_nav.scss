@@ -1,0 +1,52 @@
+nav{
+
+    ul{
+      display: flex;
+      justify-content: start;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  
+      @media (max-width: 49rem){
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  
+    li{
+      margin-right: 1rem;
+    }
+  
+    a{
+      color: var(--txt);
+      display: block;
+      padding: 0 0 .5rem;
+      text-decoration: none;
+  
+      &:hover{
+        color: var(--acc);
+      }
+  
+      &.current{
+        position: relative;
+        color: var(--txt);
+  
+        &:hover{
+          color: var(--txt);
+        }
+  
+        &::after{
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: -.5rem;
+          right: -.5rem;
+          height: .25rem;
+          background: var(--acc);
+        }
+        
+      }
+  
+    }
+  
+  }

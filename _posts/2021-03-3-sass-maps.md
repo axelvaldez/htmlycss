@@ -84,6 +84,7 @@ color: color("primary");
 Ahora si podemos iterar sobre nuestro SASS Map para generar las clases de color necesarias:
 
 ```SCSS
+/* the colors */
 @each $key, $value in $colors {
   .color-#{$key}{ color: #{$value}; }
   .bg-#{$key}{ background-color: #{$value}; }
@@ -92,7 +93,7 @@ Ahora si podemos iterar sobre nuestro SASS Map para generar las clases de color 
 
 Esto generará el siguiente CSS:
 
-```SCSS
+```CSS
 .color-primary{ color: #ff5400; }
 .bg-primary{ background-color: #ff5400; }
 .color-secondary{ color: #46424C; }
@@ -100,6 +101,7 @@ Esto generará el siguiente CSS:
 .color-text{ color: #060713; }
 .bg-text{ color: #060713; }
 ```
+
 
 Y cada vez que edites o agregues un nuevo color a tu SASS Map, las clases se generarán solitas y estarás listo para usar ese color tanto en tu CSS como en tu HTML.
 

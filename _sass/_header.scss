@@ -1,0 +1,41 @@
+header{
+    padding: 0 calc(50vw - 20rem);
+    background: var(--bg1);
+    color: var(--txt);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-shadow: $shadow-soft;
+  
+    @media (min-width: 64rem){
+      padding: 0 calc(50vw - 30rem);
+    }
+  
+    @media (max-width: 49rem){
+      display: block;
+    }
+  
+    > *{
+      margin: 0 2rem;
+
+      @media (max-width: 30rem){
+        margin: 0 1rem;
+      }
+    }
+  
+    .logo{
+      margin: 1rem 0;
+      height: 2rem;
+      width: auto;
+      display: block;
+  
+      path{
+        fill: currentColor;
+      }
+  
+      &.bigger{
+        height: 3rem;
+      }
+    }
+  
+  }

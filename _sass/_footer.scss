@@ -1,0 +1,45 @@
+footer{
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  margin: auto auto 0;
+  padding: 2rem;
+  color: var(--bg3);
+
+  @media (min-width: 64rem){
+    max-width: 60rem;
+  }
+
+  @media (max-width: 30rem){
+    padding: 2rem 1rem;
+  }
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    height: 1px;
+    width: calc(100% - 4rem);
+    background: var(--shd);
+
+    @media (max-width: 30rem){
+      left: 1rem;
+      width: calc(100% - 2rem);
+    }
+  }
+
+  p{
+    margin-bottom: 0;
+  }
+
+  a{
+    color: var(--txt);
+
+    &:hover{
+      color: var(--acc);
+    }
+
+  }
+
+}

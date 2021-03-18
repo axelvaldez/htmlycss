@@ -1,0 +1,175 @@
+/* --POST SUMMARY */
+
+.post-summary{
+    margin-bottom: 2rem;
+  
+    > *{
+      margin-bottom: 0;
+    }
+  
+    h2{
+      margin-top: 0 !important;
+    }
+  
+    .date{
+      font-size: $font-size-small;
+      color: var(--bg3);
+    }
+  
+    .tag{
+      background: var(--bg3);
+    }
+  }
+  
+  pre{
+    margin: 2rem 0;
+  
+    & > code{
+      padding: 2rem;
+      border-radius: $radius;
+      font-size: .8rem;
+    }
+  
+  }
+
+  :not(pre) > code{
+    font-size: $font-size-small;
+    padding: .25rem;
+    background: var(--bg2);
+    border-radius: $radius;
+  }
+  
+  // --TAGS
+  
+  .tag{
+    font-size: $font-size-small;
+    padding: 0 .5rem;
+    margin-right: .25rem;
+    border-radius: $radius / 2;
+    display: inline-block;
+    background: var(--txt);
+    color: var(--bg1);
+    text-transform: uppercase;
+    text-decoration: none !important;
+    font-weight: 600;
+    border: none;
+  
+    &:hover{
+      color: var(--bg1);
+      background: var(--acc);
+      border: none;
+    }
+  }
+  
+  // --CARDS
+  
+  .card{
+    box-shadow: $shadow-soft;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: $radius;
+    background: var(--bg1);
+  }
+  
+  .author{
+    display: grid;
+    grid-template-rows: 5rem auto;
+    grid-gap: 1rem;
+    justify-items: center;
+    text-align: center;
+    
+  
+    *{
+      margin: 0;
+      line-height: 1.15;
+    }
+  }
+  
+  // --IMAGES
+  
+  .img-avatar{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: block;
+  }
+  
+  // --ICONS
+  
+  .icon {
+    width: 1em;
+    height: 1em;
+    margin-right: .25em;
+    position: relative;
+    top: 2px;
+    fill: currentColor;
+  }
+  
+  // --intro (home)
+  
+  .intro{
+    font-size: $font-size-2;
+    padding: 2rem 0 6rem;
+  }
+  
+  // --UTILITY CLASSES
+  
+  .mb-0{
+    margin-bottom: 0;
+  }
+
+  // --TABLES
+
+  table{
+    border-collapse: collapse;
+    margin: 2rem auto;
+
+    th{
+      border-bottom: 2px solid var(--txt);
+      padding: .5rem 2rem;
+      text-align: left;
+      
+      &:first-child{
+        padding-left: 0;
+      }
+
+      &:last-child{
+        padding-right: 0;
+      }
+
+    }
+
+    td{
+      border-bottom: 1px solid var(--txt);
+      padding: .5rem 2rem;
+      text-align: left;
+      vertical-align: top;
+
+      &:first-child{
+        padding-left: 0;
+      }
+
+      &:last-child{
+        padding-right: 0;
+      }
+      
+    }
+
+  }
+
+  // --IMAGES
+
+  .content-main img{
+    max-width: 100%;
+    height: auto;
+    margin: 1rem auto;
+
+    @media (prefers-color-scheme: dark){
+      opacity: .7;
+      transition: ease-in all 100ms;
+
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }

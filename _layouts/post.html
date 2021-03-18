@@ -20,15 +20,31 @@
     
       <div class="content-meta">
         
-        <div class="author">
+        <div class="card author">
           <img src="https://www.fillmurray.com/g/200/200/" alt="Axel Valdez" class="img-avatar">
           <p>
             <strong>Axel Valdez</strong><br>
             <small>Diseñador y Front-end Developer. Hermosillo, México.</small>
           </p>
         </div>
+
+        {% assign month = page.date | date: '%m' | minus: 1%}
+        <p>
+          {% include icons/calendar.svg %}
+          {{ site.data.months.names[month] }}
+          {{ page.date | date: "%d, %Y" }}
+        </p>
+
+        <p class="mb-4">
+          <a href="#respond">{% include icons/envelope.svg %} Responder por email</a><br>
+          <a href="#respond">{% include icons/social-twitter.svg %} Responder via Twitter</a>
+        </p>
         
-        <p>Publicado en <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_long_string }}</time>, bajo la categoría <a href="" class="tag">sass</a></p>
+        <p>
+          <a href="" class="tag">sass</a>
+          <a href="" class="tag">html</a>
+          <a href="" class="tag">css</a>
+        </p>
       </div>
     
     </div>
