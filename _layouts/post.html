@@ -21,7 +21,7 @@
       <div class="content-meta">
         
         <div class="card author">
-          <img src="https://www.fillmurray.com/g/200/200/" alt="Axel Valdez" class="img-avatar">
+          <img src="/assets/img/axel.jpg" alt="Axel Valdez" class="img-avatar">
           <p>
             <strong>Axel Valdez</strong><br>
             <small>Diseñador y Front-end Developer. Hermosillo, México.</small>
@@ -41,15 +41,14 @@
         </p>
         
         <p>
-          <a href="" class="tag">sass</a>
-          <a href="" class="tag">html</a>
-          <a href="" class="tag">css</a>
+          {% for tag in page.tags %}
+            <a href="" class="tag">{{ tag }}</a>
+          {% endfor %}
         </p>
       </div>
     
     </div>
   </main>
-
   {% include footer.html %}
 </body>
 </html>

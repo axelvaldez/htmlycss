@@ -3,6 +3,8 @@ layout: post
 excerpt_separator: <!-- more -->
 title: "Sass Maps para variables de color"
 tldr: "Definiendo variables de color y clases de HTML al mismo tiempo utilizando Sass"
+tags: html css
+category: notas
 ---
 
 Hace algunos años empecé a usar SASS. Lo primero que me convenció fueron las variables. En una época en la que las variables o *custom properties* de CSS aún no existían, esto representaba una ventaja gigante a la hora de escribir CSS fácil de mantener.

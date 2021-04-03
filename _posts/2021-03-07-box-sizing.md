@@ -3,6 +3,8 @@ layout: post
 excerpt_separator: <!-- more -->
 title: "Box sizing explicado en dos minutos"
 tldr: "Diferencias entre border-box y content-box"
+tags: css
+category: notas
 ---
 
 La propiedad ```box-sizing``` en CSS define cómo se calcula el ancho y alto total de un elemento. Sus valores posibles son ```content box``` y ```border box```, siendo el primero el *default*.
