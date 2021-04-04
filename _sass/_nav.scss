@@ -1,8 +1,11 @@
 nav{
-
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
     ul{
       display: flex;
       justify-content: start;
+      align-items: stretch;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -15,12 +18,17 @@ nav{
   
     li{
       margin-right: 1rem;
+      display: flex;
+      justify-content: start;
+      align-items: stretch;
     }
   
     a{
       color: var(--txt);
-      display: block;
-      padding: 0 0 .5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
       text-decoration: none;
   
       &:hover{

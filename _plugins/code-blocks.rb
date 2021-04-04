@@ -24,6 +24,7 @@ module Jekyll
       outputhtml = ''
       if html != ''
         html = html.gsub("<", "&lt;")
+        html = html.gsub("/assets/img/posts/", "")
         outputhtml = "<div class=\"codeblock-code html\">"
         outputhtml += "<pre><code class=\"language-html\">"
         outputhtml += html
