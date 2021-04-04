@@ -72,6 +72,10 @@ small, .small{
   font-size: $font-size-small;
 }
 
+.uppercase{
+  text-transform: uppercase;
+}
+
 a{
   color: var(--txt);
   text-decoration: none;

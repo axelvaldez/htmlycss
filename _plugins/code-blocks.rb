@@ -2,18 +2,47 @@ module Jekyll
   class RenderCodeBlock < Liquid::Block
 
     def render(context)
-      preview = super
-      code = preview.gsub("<spacer/>", "")
-      code = code.gsub("<", "&lt;")
-      code = code.gsub /^$\n/, ''
-      preview_wrap_start = "<div class=\"codeblock\"><div class=\"codeblock-preview\">"
-      preview_wrap_end = "</div>"
-      code_wrap_start = "<div class=\"codeblock-code\"><pre><code class=\"language-html\">"
-      code_wrap_end = "</code></pre><a href=\"#\" class=\"codeblock-copy btn btn-icon btn-noborder\"><i class=\"fas fa-copy\"></i><span>Copy</span></a></div></div>"
+      content = super.split('---')
+      html = content.first
+      css = content.last
+      suffix = rand(0..2147483647).to_s
+      cssmod = css.gsub('&', '.class' + suffix);
+      html = html.gsub /^$\n/, ''
+      css = css.gsub('& ', '');
+      css = css.gsub /^$\n/, ''
+      
+      outputpreview = ''
+      if html != ''
+        outputpreview = "<div class=\"codeblock-preview class#{suffix}\">"
+        outputpreview += html
+        outputpreview += "<style>"
+        outputpreview += cssmod
+        outputpreview += "</style>"
+        outputpreview += "</div>"
+      end
+
+      outputhtml = ''
+      if html != ''
+        html = html.gsub("<", "&lt;")
+        outputhtml = "<div class=\"codeblock-code html\">"
+        outputhtml += "<pre><code class=\"language-html\">"
+        outputhtml += html
+        outputhtml += "</code></pre>"
+        outputhtml += "</div>"
+      end
+      
+      outputcss = ''
+      if css != ''
+        outputcss = "<div class=\"codeblock-code css\">"
+        outputcss += "<pre><code class=\"language-css\">"
+        outputcss += css
+        outputcss += "</code></pre>"
+        outputcss += "</div>"
+      end
       
       
-      
-      preview_wrap_start + preview + preview_wrap_end + code_wrap_start + code + code_wrap_end
+      #output
+      outputpreview + outputhtml + outputcss
     end
 
   end

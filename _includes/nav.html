@@ -1,8 +1,7 @@
 <nav>
     <ul>
-        <li><a href="#" class="current">Notas</a></li>
-        <li><a href="#">Ejemplos</a></li>
-        <li><a href="#">Archivo</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="/notas" {% if page.url contains "/notas/" %}class="current"{% endif %}>Notas</a></li>
+        <li><a href="/ejemplos" {% if page.url contains "/ejemplos/" %}class="current"{% endif %}>Ejemplos</a></li>
+        <li><a href="/about" {% if page.url contains "/about/" %}class="current"{% endif %}>About</a></li>
     </ul>
 </nav>

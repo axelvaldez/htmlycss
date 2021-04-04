@@ -28,6 +28,10 @@ main{
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
+
+        &.reverse{
+          flex-direction: row-reverse;
+        }
       }
   
     }
@@ -59,6 +63,10 @@ main{
     @media (min-width: 64rem){
       margin: 0 4rem 0 0;
       width: 16rem;
+
+      .reverse &{
+        margin: 0 0 0 4rem;
+      }
     }
   
   }

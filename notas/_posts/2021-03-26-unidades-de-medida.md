@@ -4,7 +4,6 @@ excerpt_separator: <!-- more -->
 title: "Unidades de medida en CSS"
 tldr: "Lee esto para que no te confundas con px, em, rem, vh, vw, vmin, vmax... etcétera."
 tags: css
-category: notas
 ---
 
 Las unidades de medida son súper importantes en CSS, con ellas controlamos el tamaño de cualquier elemento custom en nuestras páginas. Sin embargo, fuera de ```px``` y ```em```, muchas siguen siendo desconocidas para la mayoría de quienes empiezan en CSS.
