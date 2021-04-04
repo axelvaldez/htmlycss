@@ -10,7 +10,7 @@ module Jekyll
         self.data['tag'] = tag
         tag_title_prefix = site.config['tag_title_prefix'] || 'Notas y ejemplos con el tag '
         tag_title_suffix = site.config['tag_title_suffix'] || ''
-        self.data['title'] = "#{tag_title_prefix}<span class=\"uppercase\">#{tag}</span>#{tag_title_suffix}"
+        self.data['title'] = "#{tag_title_prefix}#{tag.upcase}#{tag_title_suffix}"
       end
     end
     class TagGenerator < Generator
