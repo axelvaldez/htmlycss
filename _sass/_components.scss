@@ -187,3 +187,60 @@
       }
     }
   }
+
+  // OVERLAY
+  .overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(#2A3258, .5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    z-index: 5;
+  }
+
+  .show-overlay .overlay{
+    display: flex;
+  }
+
+  //form
+
+  .form-container{
+    background: var(--bg1);
+    padding: 2rem;
+    width: 600px;
+    max-width: calc(100vw - 4rem);
+    box-shadow: $shadow-soft;
+
+    label{
+      display: block;
+    }
+
+    input,
+    textarea{
+      width: 100%;
+      padding: .5rem;
+      border: 1px solid var(--bg3);
+      background: var(--bg1);
+      font-size: 1rem;
+      color: var(--txt);
+    }
+
+    .button{
+      display: inline-block;
+      padding: .5rem 1rem;
+      color: var(--bg1);
+      background: var(--txt);
+      border: none;
+      border-radius: .25rem;
+      font-size: 1rem;
+
+      &:hover{
+        background: var(--acc);
+      }
+    }
+  }

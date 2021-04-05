@@ -79,7 +79,7 @@ small, .small{
 a{
   color: var(--txt);
   text-decoration: none;
-  transition: ease-in all 100ms;
+  transition: ease-in color 100ms;
 
   &:hover{
     color: var(--acc);

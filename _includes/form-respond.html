@@ -1,0 +1,42 @@
+<div class="overlay">
+    <div class="form-container">
+        <h3>Responder a {{ page.title }}</h3>
+        <form action="/thanks/" name="respond" netlify>
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        </p>
+        <p>
+            <label for="comentario">Comentario</label>
+            <textarea class="form-control" id="comentario" name="comentario" placeholder="" rows="5" required></textarea>
+        </p>
+        <p>
+            <button type="submit" class="button">Enviar</button> o <a href="#close">Cancelar</a>
+        </p>
+        </form>
+    </div>
+</div>
+
+<script>
+    const body = document.querySelector('body');
+    const respondLinks = document.querySelectorAll('a[href="#respond"]');
+    const closeLinks = document.querySelectorAll('a[href="#close"]');
+
+    respondLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            body.classList.add('show-overlay');
+        });
+    });
+
+    closeLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            body.classList.remove('show-overlay');
+        });
+    });
+</script>

@@ -40,6 +40,10 @@ main{
       width: 100%;
       max-width: 40rem;
       order: 2;
+
+      &.full{
+        max-width: 100%;
+      }
   
       a{
         text-decoration: underline;
