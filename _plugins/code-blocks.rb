@@ -26,7 +26,7 @@ module Jekyll
         html = html.gsub("<", "&lt;")
         html = html.gsub("/assets/img/posts/", "")
         outputhtml = "<div class=\"codeblock-code html\">"
-        outputhtml += "<pre><code class=\"language-html\">"
+        outputhtml += "<pre><code class=\"language-HTML\">"
         outputhtml += html
         outputhtml += "</code></pre>"
         outputhtml += "</div>"
@@ -35,7 +35,7 @@ module Jekyll
       outputcss = ''
       if css != ''
         outputcss = "<div class=\"codeblock-code css\">"
-        outputcss += "<pre><code class=\"language-css\">"
+        outputcss += "<pre><code class=\"language-CSS\">"
         outputcss += css
         outputcss += "</code></pre>"
         outputcss += "</div>"

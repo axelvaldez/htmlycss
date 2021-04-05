@@ -38,6 +38,54 @@
     background: var(--bg2);
     border-radius: $radius;
   }
+
+  .codeblock{
+    &-preview{
+      padding: 1rem;
+      border: 1px solid var(--bg2);
+      margin: 2rem 0 1rem;
+      border-radius: $radius;
+    }
+
+    &-code{
+      position: relative;
+
+      pre{
+        margin: 0 0 1rem;
+      }
+
+      & + :not(.codeblock-code){
+        margin-top: 2rem;
+      }
+
+    }
+  }
+
+  .hljs{
+    position: relative;
+    &::before{
+      font-weight: bold;
+      color: var(--bg3);
+      position: absolute;
+      top: .5rem;
+      right: 1rem;
+      z-index: 1;
+      opacity: .5;
+    }
+
+    &.language-HTML::before{
+      content: "HTML";
+    }
+  
+    &.language-CSS::before{
+      content: "CSS";
+    }
+
+    &.language-SCSS::before{
+      content: "SCSS";
+    }
+
+  }
   
   // --TAGS
   
@@ -195,7 +243,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(#2A3258, .5);
+    background: var(--shd);
     display: none;
     align-items: center;
     justify-content: center;
@@ -216,6 +264,11 @@
     max-width: calc(100vw - 4rem);
     box-shadow: $shadow-soft;
 
+    @media (prefers-color-scheme: dark){
+      background: var(--txt);
+      color: var(--bg4);
+    }
+
     label{
       display: block;
     }
@@ -228,6 +281,20 @@
       background: var(--bg1);
       font-size: 1rem;
       color: var(--txt);
+
+      @media (prefers-color-scheme: dark){
+        color: var(--bg4);
+        background: var(--txt);
+        border: 1px solid var(--bg1);
+      }
+
+      &::placeholder{
+        color: var(--bg3);
+
+        @media (prefers-color-scheme: dark){
+          color: var(--bg3);
+        }
+      }
     }
 
     .button{
@@ -238,9 +305,25 @@
       border: none;
       border-radius: .25rem;
       font-size: 1rem;
+      
+      @media (prefers-color-scheme: dark){
+        color: var(--txt);
+        background: var(--bg1);
+      }
 
       &:hover{
         background: var(--acc);
+      }
+    }
+
+    a{
+      @media (prefers-color-scheme: dark){
+        color: var(--bg1);
+      }
+      &:hover{
+        @media (prefers-color-scheme: dark){
+          color: var(--acc);
+        }
       }
     }
   }
