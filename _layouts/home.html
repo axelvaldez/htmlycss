@@ -22,18 +22,24 @@
           <h5>{{ category[0] }} recientes</h5>
           {% for post in category[1] %}
             <article class="post-summary">
-              <span class="date">
-                {% include icons/calendar.svg %}
-                {% assign month = post.date | date: '%m' | minus: 1%}
-                {{ site.data.months.names[month] }}
-                {{ post.date | date: "%d, %Y" }}
-              </span>
               <h2>
                 <a href="{{ post.url }}">
                   {{ post.title }}
                 </a>
               </h2>
               <p>{{ post.tldr }}</p>
+              <p>
+                <span class="date">
+                    {% include icons/calendar.svg %}
+                    {% assign month = post.date | date: '%m' | minus: 1%}
+                    {{ site.data.months.names[month] }}
+                    {{ post.date | date: "%d, %Y" }}
+                </span>
+                &nbsp;&middot;&nbsp;
+                {% for tag in post.tags %}
+                    <a href="/tag/{{ tag }}" class="tag discrete">{{ tag }}</a>
+                {% endfor %}
+            </p>
             </article>
           {% endfor %}
         {% endfor %}
