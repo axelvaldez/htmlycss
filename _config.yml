@@ -1,3 +1,5 @@
 url: "https://htmlycss.com"
 title: "HTMLyCSS"
 description: "Un sitio/blog para compartir ideas acerca de HTML, CSS y todo lo relacionado con construir sitios y aplicaciones web."
+
+permalink: /:categories/:year/:title/
