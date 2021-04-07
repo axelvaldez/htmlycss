@@ -1,0 +1,177 @@
+---
+layout: post
+excerpt_separator: <!-- more -->
+title: "Conceptos básicos de Flexbox: ejes principal y secundario"
+tldr: "Una introducción a una de las cosas más confusas al iniciar con Flexbox"
+tags: css flexbox
+---
+
+Flexbox es un módulo de CSS, es decir, un conjunto de propiedades que nos permiten controlar la distribución de un grupo de elementos en un contenedor. La característica principal de Flexbox es que le da a un contenedor la habilidad de alterar el tamaño y orden de sus elementos descendientes.
+
+Algo que suele ser muy confuso al empezar a trabajar con flexbox son los ejes principal y secundario, y lo sé porque es algo que a mi me confundía muchísimo, y en este post trataré de dejarlo claro.
+
+## Cómo utilizar flex
+
+Empecemos con un elemento con tres hijos, **sin flex**.
+
+{% codeblock %}
+<div class="padre">
+    <div class="hijo" style="background: lightcoral;">Hijo 1</div>
+    <div class="hijo" style="background: lightsalmon;">Hijo 2</div>
+    <div class="hijo" style="background: moccasin">Hijo 3</div>
+</div>
+---
+& .padre{
+    padding: 20px;
+}
+{% endcodeblock %}
+
+Nada nuevo que ver aquí, tanto el contenedor (fondo gris) como los items (fondo de color) son elementos de bloque, es decir, tienen aplicado ```display: block``` implicitamente, por lo que se acomodan de manera vertical utilizando todo el espacio horizontal disponible.
+
+Ahora volvamos ```.contenedor``` un contenedor flex:
+
+{% codeblock %}
+<div class="padre">
+    <div class="hijo" style="background: lightcoral;">Hijo 1</div>
+    <div class="hijo" style="background: lightsalmon;">Hijo 2</div>
+    <div class="hijo" style="background: moccasin">Hijo 3</div>
+</div>
+---
+& .padre{
+    padding: 20px;
+    display: flex;
+}
+{% endcodeblock %}
+
+¿Qué sucedió? que ahora ninguno de los elementos es *block*, sino que ```.padre``` es un *flex container* y los elementos ```.hijo``` son *flex-items*.
+
+## Flexbox Direction, o "los ejes"
+
+Un *flex container* tiene dos ejes o direcciones, controlados por la propiedad ```flex-direction```. Por default esta propiedad tiene un valor de "row", lo que significa que el eje principal será el horizontal (por eso los elementos en el ejemplo anterior se acomodan horizontalmente), y el eje secundario será vertical.
+
+Podemos invertir estos ejes si aplicamos ```flex-direction: column``` al elemento ```.padre```:
+
+{% codeblock %}
+<div class="padre">
+    <div class="hijo" style="background: lightcoral;">Hijo 1</div>
+    <div class="hijo" style="background: lightsalmon;">Hijo 2</div>
+    <div class="hijo" style="background: moccasin">Hijo 3</div>
+</div>
+---
+& .padre{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+{% endcodeblock %}
+
+## ¿Para qué quiero dos ejes?
+
+Lo interesante de tener dos ejes en un contenedor flexbox es que podemos alinear los *flex items* en ambos ejes al mismo tiempo. Démosle una altura definida a ```.padre``` para demostrar esto:
+
+{% codeblock %}
+<div class="padre">
+    <div class="hijo" style="background: lightcoral;">Hijo 1</div>
+    <div class="hijo" style="background: lightsalmon;">Hijo 2</div>
+    <div class="hijo" style="background: moccasin">Hijo 3</div>
+</div>
+---
+& .padre{
+    padding: 20px;
+    display: flex;
+    height: 300px;
+    justify-content: space-between;
+    align-items: center;
+}
+{% endcodeblock %}
+
+Aquí es donde la cosa se empieza a poner interesante.
+
+**```justify-content```** alinea los *flex items* en el eje principal
+
+**```align-items```** lo hace en el eje secundario.
+
+En el ejemplo estoy alineando a los elementos ```.hijo``` con espacio entre ellos en el eje principal (horizontal) y al centro en el eje secundario (vertical).
+
+¿Qué pasa si cambio la dirección de los ejes de nuevo?
+
+{% codeblock %}
+<div class="padre">
+    <div class="hijo" style="background: lightcoral;">Hijo 1</div>
+    <div class="hijo" style="background: lightsalmon;">Hijo 2</div>
+    <div class="hijo" style="background: moccasin">Hijo 3</div>
+</div>
+---
+& .padre{
+    padding: 20px;
+    display: flex;
+    height: 300px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+{% endcodeblock %}
+
+La alineación es la misma: espacio entre los elementos ```.hijo``` en el eje principal, y centrados en el eje secundario, solo que los ejes ahora están cambiados.
+
+### Opciones de alineación
+
+En este caso utilicé solo dos posibles valores para alinear elementos dentro del contenedor, pero puedes utilizar cualquiera de estos tanto para ```justify-content``` como para ```align-items```:
+
+| valor | resultado |
+|---|---|
+| flex-start | Los elementos se colocan al principio del eje |
+| flex-end | Los elementos se colocan al final del eje |
+| center | Los elementos se colocan al centro del eje |
+| space-between | Los elementos se colocan desde el principio hasta el final del eje, con el espacio sobrante distribuído de manera uniforme entre ellos |
+| space-around | Los elementos se colocan a lo largo del eje con el espacio entre ellos distribuido de manera uniforme a su alrededor. Nota: el espacio se distribuye a cada lado de los elementos, por lo que entre dos elementos habrá el doble de espacio que entre un elemento y el borde del contenedor |
+| space-evenly | Los elementos se colocan a lo largo del eje con el espacio entre ellos distribuído de manera uniforme, incluyendo el espacio entre un elemento y el borde del contenedor |
+
+## Dando el control a los hijos
+
+Nota que hasta ahora, salvo el color de fondo, no hemos utilizado propiedades en los elementos hijo. Esa es una de las razones por las que flex es tan poderoso. Sin embargo, en ocasiones es necesario hacer *override* o "sobreescribir" alguna propiedad directamente en un *flex-item*.
+
+Hagámoslo en el primero y el último:
+
+{% codeblock %}
+<div class="padre">
+    <div class="hijo" style="background: lightcoral;">Hijo 1</div>
+    <div class="hijo" style="background: lightsalmon;">Hijo 2</div>
+    <div class="hijo" style="background: moccasin">Hijo 3</div>
+</div>
+---
+& .padre{
+    padding: 20px;
+    display: flex;
+    height: 300px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+& .hijo:first-child{
+    align-self: flex-start;
+}
+
+& .hijo:last-child{
+    align-self: flex-end;
+}
+
+{% endcodeblock %}
+
+Espero que esta explicación básica haya sido clara. En el siguiente post de flexbox escribiré acerca del orden de los ```flex-items``` y algunas de sus aplicaciones prácticas.
+
+Si te queda alguna duda, o te interesa que explique algo específico, <a href="#respond">no dudes en responder</a>. Leo todo lo que llega.
+
+<style>
+    .padre{
+        background: var(--bg4);
+    }
+    .hijo{
+        padding: 10px;
+    }
+    @media (prefers-color-scheme: dark){
+        .hijo{
+            color: var(--bg4);
+        }
+    }
+</style>
