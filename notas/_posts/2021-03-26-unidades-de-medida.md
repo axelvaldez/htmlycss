@@ -2,7 +2,7 @@
 layout: post
 excerpt_separator: <!-- more -->
 title: "Unidades de medida en CSS"
-tldr: "Lee esto para que no te confundas con px, em, rem, vh, vw, vmin, vmax... etcétera."
+tldr: "No te confundas con px, em, rem, vh, vw, vmin, vmax... etcétera."
 tags: css
 ---
 

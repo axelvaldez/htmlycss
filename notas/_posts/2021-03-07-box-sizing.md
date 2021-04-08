@@ -1,8 +1,8 @@
 ---
 layout: post
 excerpt_separator: <!-- more -->
-title: "Box sizing explicado en dos minutos"
-tldr: "Diferencias entre border-box y content-box"
+title: "El modelo de cajas: border-box vs content-box"
+tldr: "Entendiendo la propiedad box-sizing de CSS"
 tags: css
 ---
 

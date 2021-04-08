@@ -8,9 +8,8 @@ module Jekyll
         self.process(@name)
         self.read_yaml(File.join(base, '_layouts'), 'tag.html')
         self.data['tag'] = tag
-        tag_title_prefix = site.config['tag_title_prefix'] || 'Notas y ejemplos con el tag '
-        tag_title_suffix = site.config['tag_title_suffix'] || ''
-        self.data['title'] = "#{tag_title_prefix}#{tag.upcase}#{tag_title_suffix}"
+        self.data['title'] = "#{tag.upcase}"
+        self.data['tldr'] = "Notas y ejemplos con el tag #{tag.upcase}"
       end
     end
     class TagGenerator < Generator

@@ -2,7 +2,7 @@
 layout: post
 excerpt_separator: <!-- more -->
 title: "Imágenes monotono y duotono con CSS"
-tldr: "Colorea tus imágenes sin usar photoshop"
+tldr: "Aplicando efectos de color a tus imágenes sólo con CSS, sin tocar Photoshop"
 tags: css color
 ---
 

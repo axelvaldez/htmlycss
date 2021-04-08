@@ -2,11 +2,11 @@
 layout: post
 excerpt_separator: <!-- more -->
 title: "Sass Maps para variables de color"
-tldr: "Definiendo variables de color y clases de HTML al mismo tiempo utilizando Sass"
+tldr: "Genera variables de color para CSS y clases de color para HTML con la magia de Sass"
 tags: html css sass
 ---
 
-Hace algunos años empecé a usar SASS. Lo primero que me convenció fueron las variables. En una época en la que las variables o *custom properties* de CSS aún no existían, esto representaba una ventaja gigante a la hora de escribir CSS fácil de mantener.
+Hace algunos años empecé a usar Sass. Lo primero que me convenció fueron las variables. En una época en la que las variables o *custom properties* de CSS aún no existían, esto representaba una ventaja gigante a la hora de escribir CSS fácil de mantener.
 
 Como para la mayoría, mi primer caso de uso para las variables fueron los colores. ¿Definir una paleta de colores y usarla a lo largo de la hoja de estilos, para luego hacer cambios en un sólo lugar y que toda la hoja de estilos se actualice? ¿Dónde firmo?.
 
@@ -42,17 +42,17 @@ Hasta ahora todo bien. El problema es que mientras más variaciones de color vay
 
 ¡Fácil, iteramos sobre las variables y generamos clases que hagan referencia a esas variables!
 
-Nope, en SASS no podemos tener una lista de variables sobre la cual iterar, ni se pueden interpolar los nombres de variables. Es decir, no podemos generar código que contenga nombres de variables en su resultado.
+Nope, en Sass no podemos tener una lista de variables sobre la cual iterar, ni se pueden interpolar los nombres de variables. Es decir, no podemos generar código que contenga nombres de variables en su resultado.
 
-### SASS Maps.
+### Sass Maps.
 
-Lo que sí podemos hacer es utilizar un SASS Map en lugar de variables para los colores. Un SASS Map es basicamente una lista de pares tipo *key, value*. Su sintaxis es:
+Lo que sí podemos hacer es utilizar un Sass Map en lugar de variables para los colores. Un Sass Map es basicamente una lista de pares tipo *key, value*. Su sintaxis es:
 
 ```SCSS
 $map: ( key1: value1, key2: value2, key3: value3 )
 ```
 
-Convirtiendo nuestras variables de color a un SASS Map, tendríamos:
+Convirtiendo nuestras variables de color a un Sass Map, tendríamos:
 
 ```SCSS
 $colors: (
@@ -82,7 +82,7 @@ color: color("primary");
 
 ### 2. Tener clases para utilizar cualquier color como color de texto o de fondo directamente en nuestro HTML.
 
-Ahora si podemos iterar sobre nuestro SASS Map para generar las clases de color necesarias:
+Ahora si podemos iterar sobre nuestro Sass Map para generar las clases de color necesarias:
 
 ```SCSS
 /* the colors */
@@ -104,6 +104,6 @@ Esto generará el siguiente CSS:
 ```
 
 
-Y cada vez que edites o agregues un nuevo color a tu SASS Map, las clases se generarán solitas y estarás listo para usar ese color tanto en tu CSS como en tu HTML.
+Y cada vez que edites o agregues un nuevo color a tu Sass Map, las clases se generarán solitas y estarás listo para usar ese color tanto en tu CSS como en tu HTML.
 
 
