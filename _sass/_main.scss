@@ -44,6 +44,22 @@ main{
       &.full{
         max-width: 100%;
       }
+
+      &.columns{
+        max-width: 100%;
+        @media (min-width: 64rem){
+          display: grid;
+          grid-gap: 4rem;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        &> :first-child{
+          @media (max-width: 64rem){
+            margin-bottom: 4rem;
+          }
+        }
+        
+      }
   
       a{
         text-decoration: underline;
