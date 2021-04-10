@@ -222,4 +222,39 @@ Puedes utilizar esta técnica con gradients. Aunque las imágenes no serán téc
 }
 {% endcodeblock %}
 
+## Un detalle final
+
+Al aplicar este efecto, tus usuarios no pueden interactuar con la imagen, pues los pseudoelementos están encima de ella. Para solucionar esto solamente agrega ```pointer-events: none``` a tus pseudoelementos:
+
+{% codeblock %}
+<div class="grad">
+    <img src="/assets/img/posts/cyberpunk.jpg">
+</div>
+---
+& .grad{
+    position: relative;
+}
+
+& .grad::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(45deg, #4158D0, #C850C0, #FF005C);
+    mix-blend-mode: lighten;
+    pointer-events: none;
+}
+
+& .grad img{
+    filter: saturate(0);
+}
+{% endcodeblock %}
+
+Y listo, ahora la imagen puede ser arrastrada y acepta click secundario sin problemas.
+
+<hr class="separator">
+
 Y eso es todo. Puedes experimentar con otros *blend modes* y lograr muchos efectos distintos sin siquiera tocar photoshop.

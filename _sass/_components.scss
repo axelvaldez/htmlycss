@@ -331,3 +331,14 @@
       }
     }
   }
+
+.separator{
+  text-align: center;
+  margin: 2rem auto;
+  border: none;
+  color: var(--bg3);
+  
+  &::before{
+    content: "• • •";
+  }
+}
