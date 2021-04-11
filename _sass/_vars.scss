@@ -16,6 +16,7 @@ html{
   --bg3: #7B819D;
   --bg4: #F0F1F4;
   --shd: rgba(42, 50, 88, .15);
+  --hig: #F6F7F9;
 
   @media (prefers-color-scheme: dark) {
       --acc: #f03;
@@ -25,6 +26,7 @@ html{
       --bg3: #8D91A6;
       --bg4: #222841;
       --shd: rgba(6, 9, 23, .45);
+      --hig: #1C2136;
   }
 
 }

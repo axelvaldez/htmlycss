@@ -7,8 +7,8 @@ module Jekyll
       css = content.last
       suffix = rand(0..2147483647).to_s
       cssmod = css.gsub('&', '.class' + suffix);
-      css = css.gsub('>>', '<strong>');
-      css = css.gsub('<<', '</strong>');
+      cssmod = cssmod.gsub('>>', '');
+      css = css.gsub('>>', '<i>&rarr;</i>');
       html = html.gsub /^$\n/, ''
       css = css.gsub('& ', '');
       css = css.gsub /^$\n/, ''

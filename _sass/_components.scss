@@ -110,6 +110,15 @@ pre{
     content: "SCSS";
   }
 
+  i{
+    font-style: normal;
+    position: absolute;
+    left: .5rem;
+    opacity: .5;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
 }
 
 // --TAGS

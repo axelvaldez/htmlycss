@@ -58,20 +58,20 @@ Creamos ambos pseudoelementos **en el contenedor**, y los posicionamos encima de
     <img src="/assets/img/posts/cyberpunk.jpg">
 </div>
 ---
-& .duotono{
-    position: relative;
-}
+& >>.duotono{
+    >>position: relative;
+>>}
 
-& .duotono::before,
-& .duotono::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-}
+& >>.duotono::before,
+& >>.duotono::after{
+    >>content: "";
+    >>position: absolute;
+    >>top: 0;
+    >>right: 0;
+    >>bottom: 0;
+    >>left: 0;
+    >>z-index: 1;
+>>}
 
 & .duotono img{
     filter: saturate(0);
@@ -106,13 +106,13 @@ Agregamos el fondo claro al pseudoelemento ::before y el fondo oscuro al pseudoe
     z-index: 1;
 }
 
-& .duotono::before{
-    background: #FFE600;
-}
+& >>.duotono::before{
+    >>background: #FFE600;
+>>}
 
-& .duotono::after{
-    background: #FF005C;
-}
+& >>.duotono::after{
+    >>background: #FF005C;
+>>}
 
 & .duotono img{
     filter: saturate(0);
@@ -147,12 +147,12 @@ Aplicamos ```mix-blend-mode``` a los pseudoelementos. Los valores son ```darken`
 
 & .duotono::before{
     background: #FFE600;
-    mix-blend-mode: darken;
+    >>mix-blend-mode: darken;
 }
 
 & .duotono::after{
     background: #FF005C;
-    mix-blend-mode: lighten;
+    >>mix-blend-mode: lighten;
 }
 
 & .duotono img{
@@ -213,7 +213,7 @@ Puedes utilizar esta técnica con gradients. Aunque las imágenes no serán téc
     bottom: 0;
     left: 0;
     z-index: 1;
-    background: linear-gradient(45deg, #4158D0, #C850C0, #FF005C);
+    >>background: linear-gradient(45deg, #4158D0, #C850C0, #FF005C);
     mix-blend-mode: lighten;
 }
 
@@ -245,7 +245,7 @@ Al aplicar este efecto, tus usuarios no pueden interactuar con la imagen, pues l
     z-index: 1;
     background: linear-gradient(45deg, #4158D0, #C850C0, #FF005C);
     mix-blend-mode: lighten;
-    pointer-events: none;
+    >>pointer-events: none;
 }
 
 & .grad img{
