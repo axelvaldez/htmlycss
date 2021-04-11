@@ -36,9 +36,27 @@ nav{
       @media (max-width: 49rem){
         padding-bottom: 1rem;
       }
+
+      .icon{
+        position: static;
+        width: .8rem;
+        height: .8rem;
+        
+        path, rect{
+          fill: var(--bg3);
+          opacity: .5;
+        }
+      }
   
       &:hover{
         color: var(--acc);
+
+        .icon{
+          path, rect{
+            fill: currentColor;
+            opacity: 1;
+          }
+        }
       }
   
       &.current{
@@ -61,9 +79,7 @@ nav{
         
       }
 
-      .icon{
-        position: static;
-      }
+      
   
     }
   

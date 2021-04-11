@@ -89,3 +89,9 @@ a{
     color: var(--acc);
   }
 }
+
+.icon,
+.icon path,
+.icon rect{
+  transition: ease-in fill 100ms;
+}

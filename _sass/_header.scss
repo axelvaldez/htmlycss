@@ -64,33 +64,39 @@ header{
           transform-box: fill-box;
           position: relative;
         }
-        path:nth-child(2){ animation: lights 500ms 1;  animation-delay: 0; }
-        path:nth-child(3){ animation: lights 500ms 1;  animation-delay: 50ms; }
-        path:nth-child(4){ animation: lights 500ms 1;  animation-delay: 100ms; }
-        path:nth-child(5){ animation: lights 500ms 1;  animation-delay: 150ms; }
-        path:nth-child(6){ animation: lights 500ms 1;  animation-delay: 200ms; }
-        path:nth-child(7){ animation: lights 500ms 1;  animation-delay: 250ms; }
-        path:nth-child(8){ animation: lights 500ms 1;  animation-delay: 300ms; }
+        path:nth-child(2){ animation: lights 350ms 1;  animation-delay: 0; }
+        path:nth-child(3){ animation: lights 350ms 1;  animation-delay: 50ms; }
+        path:nth-child(4){ animation: lights 350ms 1;  animation-delay: 100ms; }
+        path:nth-child(5){ animation: lights 350ms 1;  animation-delay: 150ms; }
+        path:nth-child(6){ animation: lights 350ms 1;  animation-delay: 200ms; }
+        path:nth-child(7){ animation: lights 350ms 1;  animation-delay: 250ms; }
+        path:nth-child(8){ animation: lights 350ms 1;  animation-delay: 300ms; }
+
+        // path:nth-child(3){ animation: typing 400ms infinite;  animation-delay: 0; }
+        // path:nth-child(5){ animation: typing 400ms infinite;  animation-delay: 40ms; }
+        // path:nth-child(6){ animation: typing 400ms infinite;  animation-delay: 80ms; }
+        // path:nth-child(4){ animation: typing 400ms infinite;  animation-delay: 120ms; }
+        // path:nth-child(8){ animation: typing 400ms infinite;  animation-delay: 160ms; }
+        // path:nth-child(7){ animation: typing 400ms infinite;  animation-delay: 200ms; }
+        // path:nth-child(2){ animation: typing 400ms infinite;  animation-delay: 240ms; }
       }
       
     }
   
   }
 
-  @keyframes typing{
-    0%{
-      transform: translateY(5px);
-      opacity: .75;
-    }
-    100%{
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
+  // @keyframes typing{
+  //   0%{
+  //     transform: translateY(2px) scale(.8);
+  //   }
+  //   100%{
+  //     transform: translateY(0) scale(1);
+  //   }
+  // }
 
   @keyframes lights{
     0%, 90%{
-      opacity: .1;
+      opacity: 0;
     }
     100%{
       opacity: 1;
