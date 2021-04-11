@@ -21,7 +21,8 @@ footer{
     left: 2rem;
     height: 1px;
     width: calc(100% - 4rem);
-    background: var(--shd);
+    background: var(--bg3);
+    opacity: .5;
 
     @media (max-width: 30rem){
       left: 1rem;

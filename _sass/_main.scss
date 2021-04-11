@@ -64,6 +64,18 @@ main{
       a{
         text-decoration: underline;
       }
+
+      h2{
+        .icon{
+          top: .25rem;
+          margin: 0;
+          opacity: .5;
+
+          path, rect{
+            fill: var(--bg3);
+          }
+        }
+      }
     }
   
   }

@@ -21,7 +21,13 @@
         {% for category in site.categories %}
         {% assign n = forloop.index | minus: 1 %}
         <div>
-          <h2>{{ category[0] | capitalize }}</h2>
+          <h2>
+            {% if category[0] == "notas" %}
+              {% include icons/notas.svg %}
+            {% else %}
+              {% include icons/ejemplos.svg %}
+            {% endif %}
+            {{ category[0] | capitalize }}</h2>
           <p>{{ site.cats[n] }}</p>
           {% for post in category[1] %}
             <article class="post-summary card">

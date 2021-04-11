@@ -6,8 +6,6 @@ $font-size-3: 1.25rem;
 $font-size-4: 1rem;
 $font-size-small: .8rem;
 
-$shadow-soft: 0 .25rem 2rem var(--shd);
-
 html{
   --acc: #f03;
   --txt: #2A3258;
@@ -16,7 +14,6 @@ html{
   --bg3: #7B819D;
   --bg4: #F0F1F4;
   --shd: rgba(42, 50, 88, .15);
-  --hig: #F6F7F9;
 
   @media (prefers-color-scheme: dark) {
       --acc: #f03;
@@ -26,7 +23,9 @@ html{
       --bg3: #8D91A6;
       --bg4: #222841;
       --shd: rgba(6, 9, 23, .45);
-      --hig: #1C2136;
   }
 
 }
+
+$shadow-soft:
+  0 .25rem 2rem var(--shd);

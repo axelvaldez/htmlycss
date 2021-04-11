@@ -1,7 +1,7 @@
 <nav>
     <ul>
-        <li><a href="/notas" {% if page.url contains "/notas/" %}class="current"{% endif %}>Notas</a></li>
-        <li><a href="/ejemplos" {% if page.url contains "/ejemplos/" %}class="current"{% endif %}>Ejemplos</a></li>
-        <li><a href="/about" {% if page.url contains "/about/" %}class="current"{% endif %}>About</a></li>
+        <li><a href="/notas" {% if page.url contains "/notas/" %}class="current"{% endif %}>{% include icons/notas.svg %} Notas</a></li>
+        <li><a href="/ejemplos" {% if page.url contains "/ejemplos/" %}class="current"{% endif %}>{% include icons/ejemplos.svg %} Ejemplos</a></li>
+        <li><a href="/about" {% if page.url contains "/about/" %}class="current"{% endif %}>{% include icons/about.svg %} About</a></li>
     </ul>
 </nav>
