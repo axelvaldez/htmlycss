@@ -59,9 +59,10 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-darwin-19
 
 DEPENDENCIES
   jekyll (~> 4.2)
 
 BUNDLED WITH
-   2.2.9
+   2.2.11

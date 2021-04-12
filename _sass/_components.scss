@@ -45,6 +45,11 @@ pre{
     overflow: hidden;
     position: relative;
 
+    spacer{
+      display: block;
+      height: 200px;
+    }
+
     &::before{
       content: "";
       position: absolute;
