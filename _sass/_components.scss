@@ -2,9 +2,13 @@
 
 .post-summary{
   margin-bottom: 2rem;
+  display: block;
+  text-decoration: none !important;
+  color: var(--txt);
 
-  h2{
+  .post-title{
     margin-top: 0 !important;
+    text-decoration: underline !important;
   }
 
   .date{
@@ -14,6 +18,15 @@
 
   .tag{
     background: var(--bg3);
+  }
+
+  &:hover{
+    color: var(--txt);
+    
+    .post-title{
+      color: var(--acc);
+      text-decoration: underline;
+    }
   }
 }
   

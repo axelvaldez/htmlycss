@@ -3,7 +3,9 @@ title: "HTMLyCSS"
 description: "Un sitio/blog para compartir ideas acerca de HTML, CSS y todo lo relacionado con construir sitios y aplicaciones web."
 
 cats:
-  - Artículos  relacionadas con técnicas para desarrollar HTML, CSS o alguna de sus variantes.
-  - Aplicaciones de HTML y CSS con explicación completa y  código listo para copiar y pegar.
+  - Notas
+    - Artículos  relacionadas con técnicas para desarrollar HTML, CSS o alguna de sus variantes.
+  - Ejemplos
+    - Aplicaciones de HTML y CSS con explicación completa y  código listo para copiar y pegar.
 
 permalink: /:categories/:year/:title/

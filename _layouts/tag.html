@@ -20,22 +20,7 @@
     <div class="content reverse">
       <div class="content-main">
         {% for post in site.tags[page.tag] %}
-        <article class="post-summary card">
-            <h2>
-            <a href="{{ post.url }}">
-                {{ post.title }}
-            </a>
-            </h2>
-            <p>{{ post.tldr }}</p>
-            <p>
-                <span class="date">
-                    {% include icons/calendar.svg %}
-                    {% assign month = post.date | date: '%m' | minus: 1%}
-                    {{ site.data.months.names[month] }}
-                    {{ post.date | date: "%d, %Y" }}
-                </span>
-            </p>
-        </article>
+          {% include post-summary.html titletag="h2" %}
         {% endfor %}
       </div>
 
