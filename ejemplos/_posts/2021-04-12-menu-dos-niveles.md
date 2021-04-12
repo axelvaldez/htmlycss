@@ -3,7 +3,7 @@ layout: post
 excerpt_separator: <!-- more -->
 title: "Menú de dos niveles sólo con CSS"
 tldr: "Un menú de dos niveles sin usar JavaScript, y con sólo unas cuantas líneas de CSS."
-tags: css
+tags: html css
 ---
 
 Cuando necesitamos hacer un menú de dos niveles, es muy común recurrir a alguna librería de JavaScript que haga la mayor parte del trabajo pesado por nosotros, sin embargo hacerlo solo con CSS no solo es mucho más simple, sino que de paso elimina casi todos los puntos potenciales de falla.
@@ -45,7 +45,7 @@ Nota: Este es el unico HTML que tendremos durante el resto del ejemplo, asi que 
 
 ## Primer nivel
 
-Para crear el menú de primer nivel, ocultamos los ul internos y volvemos ```.menu``` un elemento Flex con los items al centro. Si necesitas saber qué rollo con esto [acá hay una introducción a Flexbox](/notas/flex-ejes/).
+Para crear el menú de primer nivel, ocultamos los ul internos y volvemos ```.menu``` un elemento Flex con los items al centro. Si necesitas saber qué rollo con esto [acá hay una introducción a Flexbox](/notas/2021/flex-ejes/).
 
 También le quitamos el estilo de lista a ```.menu``` y ```.menu ul``` con ```list-style: none```.
 
