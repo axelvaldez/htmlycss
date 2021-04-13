@@ -79,14 +79,18 @@ pre{
     &::after{
       content: "Resultado";
       position: absolute;
-      top: .525rem;
-      right: 1rem;
+      top: 0;
+      left: 0;
       font-family: monospace;
       font-weight: bold;
       font-size: .8rem;
       line-height: 1rem;
       color: var(--bg3);
       opacity: .5;
+      width: 100%;
+      padding: .525rem 1rem;
+      text-align: right;
+      border-bottom: 1px solid var(--bg3);
     }
   }
 

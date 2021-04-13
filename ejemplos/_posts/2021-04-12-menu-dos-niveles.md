@@ -89,7 +89,7 @@ También le quitamos el estilo de lista a ```.menu``` y ```.menu ul``` con ```li
 
 ### Ajuste de estilo
 
-Normalizamos el look de los links y los spans, y les agregamos padding a los lados:
+Normalizamos la apariencia de los links y los spans, y les agregamos padding a los lados:
 
 {% codeblocknohtml %}
 <ul class="menu">
@@ -130,7 +130,6 @@ Normalizamos el look de los links y los spans, y les agregamos padding a los lad
 
 & >>.menu a,
 & >>.menu span{
-  >>color: black;
   >>text-decoration: none;
   >>padding: 0 .5rem;
 >>}
@@ -193,7 +192,6 @@ Para lograr este posicionamiento le damos posicionamiento relativo al elemento c
 
 & .menu a,
 & .menu span{
-  color: black;
   text-decoration: none;
   padding: 0 .5rem;
 }
@@ -258,7 +256,6 @@ Normalizamos el padding del menu de segundo nivel, y le agregamos un color de fo
 
 & .menu a,
 & .menu span{
-  color: black;
   text-decoration: none;
   padding: 0 .5rem;
 }
@@ -269,3 +266,23 @@ Y listo, con este código base ya puedes dar rienda suelta a tu creatividad y en
 <hr class="separator">
 
 Nota: este es un menú muy básico, y no toma en cuenta el funcionamiento en dispositivos sin cursor (como un teléfono o una tablet). Más adelante retomaré en un ejemplo lo necesario para que sí funcione en esos dispositivos y actualizaré este párrafo con un link a ese ejemplo.
+
+<style>
+ul.menu > li > a,
+ul.menu > li > span{
+  color: var(--txt);
+}
+
+ul.menu ul > li a,
+ul.menu ul > li > span{
+  color: var(--txt);
+}
+
+@media (prefers-color-scheme: dark){
+  ul.menu ul > li a,
+  ul.menu ul > li > span{
+    color: var(--bg1);
+  }
+}
+
+</style>
