@@ -137,9 +137,9 @@ Normalizamos la apariencia de los links y los spans, y les agregamos padding a l
 
 ## Segundo nivel
 
-Ahora hacemos que el menú de segundo nivel (```.menu ul```) aparezca con ```display: block``` cuando el cursor esté sobre su contenedor (```li```) y lo positionamos de manera absoluta al 100% de distancia del border superior y a 0% de distancia del borde izquierdo de su contenedor.
+Ahora hacemos que el menú de segundo nivel (```.menu ul```) aparezca con ```display: block``` cuando el cursor esté sobre su contenedor (```li```) y lo posicionamos de manera absoluta al 100% de distancia del borde superior y a 0 distancia del borde izquierdo de su contenedor.
 
-Para lograr este posicionamiento le damos posicionamiento relativo al elemento contenedor ```li```.
+Para lograr este posicionamiento le damos ```position: relative``` al elemento contenedor ```li```.
 
 {% codeblocknohtml %}
 <ul class="menu">
@@ -179,7 +179,7 @@ Para lograr este posicionamiento le damos posicionamiento relativo al elemento c
   list-style: none;
   >>position: absolute;
   >>top: 100%;
-  >>left: 0%;
+  >>left: 0;
 }
 
 & >>.menu li:hover ul{
