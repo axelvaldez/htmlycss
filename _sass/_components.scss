@@ -223,6 +223,10 @@ pre{
 .intro{
   font-size: $font-size-2;
   padding: 2rem 0 4rem;
+
+  &.full{
+    padding-bottom: 1.5rem;
+  }
 }
 
 // --UTILITY CLASSES
@@ -323,6 +327,11 @@ table{
   width: 600px;
   max-width: calc(100vw - 4rem);
   box-shadow: $shadow-soft;
+
+  &.fluid{
+    width: 100%;
+    max-width: unset;
+  }
 
   @media (prefers-color-scheme: dark){
     background: var(--txt);

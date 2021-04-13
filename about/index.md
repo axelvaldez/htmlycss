@@ -11,4 +11,4 @@ Obviamente no lo sé todo, pero durante 23 años he pasado por casi todas las et
 
 ### Contacto
 
-La manera más simple de contactarme es por email, en [axel&#064;paskola&#046;com](mailto:axel&#064;paskola&#046;com). Estoy en Twitter como [@axelvaldezmx](https://twitter.com/axelvaldezmx) y también mantengo un blog personal en [axel.mx](https://axel.mx).
+[La manera más simple de contactarme es por email](/contacto/). Estoy en Twitter como [@axelvaldezmx](https://twitter.com/axelvaldezmx), mis mensajes directos están abiertos. También mantengo un blog personal en [axel.mx](https://axel.mx).

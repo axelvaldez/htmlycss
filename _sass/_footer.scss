@@ -5,13 +5,51 @@ footer{
   margin: auto auto 0;
   padding: 2rem;
   color: var(--bg3);
+  display: flex;
+  justify-content: space-between;
+
+  p{
+    margin-bottom: 0;
+
+    &:last-child{
+      text-align: right;
+    }
+  }
+
+  a{
+    color: var(--txt);
+
+    &:hover{
+      color: var(--acc);
+    }
+
+  }
 
   @media (min-width: 64rem){
     max-width: 60rem;
   }
 
   @media (max-width: 30rem){
+    display: block;
     padding: 2rem 1rem;
+
+    p{
+      margin-bottom: 1rem;
+      text-align: center;
+  
+      &:last-child{
+        text-align: center;
+      }
+
+      a:first-of-type::after{
+        content: " •";
+        color: var(--bg3);
+      }
+    }
+
+    br{
+      display: none;
+    }
   }
 
   &::before{
@@ -30,17 +68,6 @@ footer{
     }
   }
 
-  p{
-    margin-bottom: 0;
-  }
-
-  a{
-    color: var(--txt);
-
-    &:hover{
-      color: var(--acc);
-    }
-
-  }
+  
 
 }
