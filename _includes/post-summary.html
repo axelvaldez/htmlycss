@@ -9,11 +9,12 @@
             {{ site.data.months.names[month] }}
             {{ post.date | date: "%d, %Y" }}
             &nbsp;&middot;&nbsp;
-            {% if post.url contains "/tag/ %}
+            {% if page.url contains "/tag/" %}
+              {% assign urlfragments = post.url | split: '/' %}
               {{ urlfragments[1] | capitalize }}
             {% endif %}
         </span>
-        {% if post.url contains "/tag/" %}
+        {% if page.url contains "/tag/" %}
         {% else %}
             {% for tag in post.tags %}
                 <a href="/tag/{{ tag }}" class="tag discrete">{{ tag }}</a>
