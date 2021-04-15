@@ -11,6 +11,10 @@ header{
       padding: 0 calc(50vw - 30rem);
     }
 
+    @media (max-width: 64rem) and (min-width: 581px){
+      flex-direction: column;
+    }
+
   
     > *{
       margin: 0 2rem;
