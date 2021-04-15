@@ -1,7 +1,8 @@
 <nav>
     <ul>
-        <li><a href="/notas" {% if page.url contains "/notas/" %}class="current"{% endif %}>{% include icons/notas.svg %} Notas</a></li>
-        <li><a href="/ejemplos" {% if page.url contains "/ejemplos/" %}class="current"{% endif %}>{% include icons/ejemplos.svg %} Ejemplos</a></li>
-        <li><a href="/about" {% if page.url contains "/about/" %}class="current"{% endif %}>{% include icons/about.svg %} About</a></li>
+        <li><a href="/notas/" {% if page.url contains "/notas/" %}class="current"{% endif %}>{% include icons/notas.svg %} Notas</a></li>
+        <li><a href="/ejemplos/" {% if page.url contains "/ejemplos/" %}class="current"{% endif %}>{% include icons/ejemplos.svg %} Ejemplos</a></li>
+        <li><a href="/about/" {% if page.url contains "/about/" %}class="current"{% endif %}>{% include icons/about.svg %} About</a></li>
+        <li><a href="/newsletter/" {% if page.url contains "/newsletter/" %}class="current"{% endif %}>{% include icons/envelope.svg %} Newsletter</a></li>
     </ul>
 </nav>

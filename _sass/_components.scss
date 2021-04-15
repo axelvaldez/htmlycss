@@ -329,8 +329,13 @@ table{
   box-shadow: $shadow-soft;
 
   &.fluid{
+    margin: 2rem 0;
     width: 100%;
     max-width: unset;
+
+    &:first-child{
+      margin-top: 0;
+    }
   }
 
   @media (prefers-color-scheme: dark){
@@ -363,6 +368,17 @@ table{
       @media (prefers-color-scheme: dark){
         color: var(--bg3);
       }
+    }
+
+  }
+
+  .fields-newsletter{
+    display: flex;
+    align-items: center;
+
+    input[type="email"]{
+      flex-grow: 1;
+      margin-right: .5rem;
     }
   }
 
