@@ -1,8 +1,13 @@
 <a class="post-summary card" href="{{ post.url }}">
     <object>
-    <{{ include.titletag }} class="post-title">{{ post.title }}</{{ include.titletag }}>
-    <p>{{ post.tldr }}</p>
-    <p>
+      <div class="content">
+        <img class="post-summary-img" src="/assets/img/posts/illustrations/{{ post.slug }}.png" alt="{{ post.title }}">
+        <div class="post-summary-text">
+          <{{ include.titletag }} class="post-title">{{ post.title }}</{{ include.titletag }}>
+          <p>{{ post.tldr }}</p>
+        </div>
+      </div>
+      <p>
         <span class="date">
             {% include icons/calendar.svg %}
             {% assign month = post.date | date: '%m' | minus: 1%}
@@ -20,6 +25,6 @@
                 <a href="/tag/{{ tag }}" class="tag discrete">{{ tag }}</a>
             {% endfor %}
         {% endif %}
-    </p>
+      </p>
     </object>
   </a>

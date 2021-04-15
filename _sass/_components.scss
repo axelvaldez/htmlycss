@@ -2,9 +2,31 @@
 
 .post-summary{
   margin-bottom: 2rem;
-  display: block;
   text-decoration: none !important;
   color: var(--txt);
+  display: block;
+
+
+  .content{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .post-summary-img{
+    width: 4rem;
+    height: 4rem;
+    margin-left: 1rem;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+  }
+
+  .post-summary-text{
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
 
   .post-title{
     margin-top: 0 !important;
