@@ -13,3 +13,6 @@ permalink: /:categories/:year/:title/
 sass:
   style: compressed
   sourcemap: never
+
+plugins:
+  - jekyll-feed
