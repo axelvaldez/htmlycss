@@ -10,10 +10,7 @@ header{
     @media (min-width: 64rem){
       padding: 0 calc(50vw - 30rem);
     }
-  
-    @media (max-width: 49rem){
-      display: block;
-    }
+
   
     > *{
       margin: 0 2rem;
@@ -37,6 +34,10 @@ header{
         &.letter:not(.y){
           fill: var(--acc);
         }
+      }
+
+      @media(max-width: 580px){
+        height: 2rem;
       }
 
       @media (prefers-color-scheme: dark) {

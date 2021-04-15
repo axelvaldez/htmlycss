@@ -10,12 +10,6 @@ nav{
       margin: 0;
       padding: 0;
       list-style: none;
-  
-      @media (max-width: 49rem){
-        width: 100%;
-        justify-content: space-between;
-        padding: 0 .5rem;
-      }
     }
   
     li{
@@ -83,4 +77,77 @@ nav{
   
     }
   
+  }
+
+  @media (max-width: 580px){
+    nav{
+      display: none;
+      position: fixed;
+      top: 6rem;
+      background: var(--bg1);
+      box-shadow: $shadow-soft;
+      right: 0;
+
+      & ul{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+      }
+  
+      & li{
+        margin: 0;
+        padding: 0;
+      }
+  
+      & a{
+        padding: 1rem 2rem;
+
+        &.current::after{
+          position: absolute;
+          content: "";
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: unset;
+          height: 100%;
+          width: .25rem;
+          background: var(--acc);
+        }
+      }
+
+    }
+
+    .menu-toggle{
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      background: var(--txt) url(../img/toggle.png);
+      background-position: top left;
+      background-size: 200%;
+      box-shadow:0 0 0 2px var(--bg1), 0 0 0 2px var(--bg1) inset;
+      align-self: center;
+      cursor: pointer;
+
+      @media (prefers-color-scheme: dark){
+        background-position: top right;
+      }
+    }
+
+    .show-menu{
+
+      nav{
+        display: flex;
+      }
+
+      .menu-toggle{
+        background-image: url(../img/toggle.png);
+        background-position: bottom left;
+
+        @media (prefers-color-scheme: dark){
+          background-position: bottom right;
+        }
+      }
+    }
+
   }
