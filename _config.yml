@@ -14,5 +14,4 @@ sass:
   style: compressed
   sourcemap: never
 
-plugins:
-  - jekyll-feed
+feedmsg: "Nota: el contenido de este sitio contiene código HTML y CSS que no se muestra correctamente en un lector de RSS. Puedes ver el post correctamente en "
