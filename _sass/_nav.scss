@@ -29,6 +29,10 @@ nav{
       display: flex;
       justify-content: start;
       align-items: stretch;
+
+      @media (max-width: 64rem){
+        margin-right: 0;
+    }
     }
   
     a{
