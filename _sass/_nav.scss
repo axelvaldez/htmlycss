@@ -153,9 +153,7 @@ nav{
       }
 
       .menu-toggle{
-        background-image: url(../img/toggle.png);
         background-position: bottom left;
-
         @media (prefers-color-scheme: dark){
           background-position: bottom right;
         }
