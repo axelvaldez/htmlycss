@@ -134,7 +134,8 @@ nav{
       display: block;
       width: 2rem;
       height: 2rem;
-      background: var(--txt) url(/assets/img/toggle.png);
+      background-color: var(--txt);
+      background-image: url(/assets/img/toggle.png);
       background-position: top left;
       background-size: 200%;
       box-shadow:0 0 0 2px var(--bg1), 0 0 0 2px var(--bg1) inset;
@@ -154,6 +155,7 @@ nav{
 
       .menu-toggle{
         background-position: bottom left;
+
         @media (prefers-color-scheme: dark){
           background-position: bottom right;
         }
