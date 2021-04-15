@@ -39,7 +39,7 @@ nav{
       padding: 0;
       text-decoration: none;
 
-      @media (max-width: 49rem){
+      @media (max-width: 64rem){
         padding-bottom: 1rem;
       }
 
@@ -113,7 +113,7 @@ nav{
       }
   
       & a{
-        padding: 1rem 2rem;
+        padding: 1rem 2.5rem 1rem 2rem;
 
         &.current::after{
           position: absolute;
