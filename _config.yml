@@ -9,3 +9,7 @@ cats:
     - Aplicaciones de HTML y CSS con explicación completa y  código listo para copiar y pegar.
 
 permalink: /:categories/:year/:title/
+
+sass:
+  style: compressed
+  sourcemap: never
