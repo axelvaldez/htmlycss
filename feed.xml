@@ -17,7 +17,7 @@ sitemap:
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>
-            {{ post.tldr | xml_escape }}
+            {{ post.tldr | xml_escape }}<![CDATA[<br><br>]]>
             {{ site.feedmsg | xml_escape }}{{ post.url | prepend: site.baseurl | prepend: site.url }}
         </description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
