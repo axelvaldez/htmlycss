@@ -1,3 +1,9 @@
+PATH
+  remote: themes
+  specs:
+    htmlycss (1.0.0)
+      jekyll (~> 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,6 +68,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  htmlycss!
   jekyll (~> 4.2)
 
 BUNDLED WITH

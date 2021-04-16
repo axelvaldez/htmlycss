@@ -6,7 +6,7 @@ module Jekyll
         @dir = dir
         @name = 'index.html'
         self.process(@name)
-        self.read_yaml(File.join(base, '_layouts'), 'tag.html')
+        self.read_yaml(File.join(base, 'themes/htmlycss/_layouts'), 'tag.html')
         self.data['tag'] = tag
         self.data['title'] = "#{tag.upcase}"
         self.data['tldr'] = "Notas y ejemplos con el tag #{tag.upcase}"

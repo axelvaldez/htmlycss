@@ -15,3 +15,5 @@ sass:
   sourcemap: never
 
 feedmsg: "Nota: el contenido de este sitio contiene código HTML y CSS que no se muestra correctamente en un lector de RSS. Puedes ver el post correctamente en "
+
+theme: htmlycss
