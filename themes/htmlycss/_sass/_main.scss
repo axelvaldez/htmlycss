@@ -50,7 +50,7 @@ main{
         @media (min-width: 64rem){
           display: grid;
           grid-gap: 4rem;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr 2fr;
         }
 
         &> :first-child{

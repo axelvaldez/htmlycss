@@ -27,8 +27,12 @@
             {% else %}
               {% include icons/ejemplos.svg %}
             {% endif %}
-            {{ category[0] | capitalize }}</h2>
+            {{ category[0] | capitalize }}
+          </h2>
           <p>{{ site.cats[n] }}</p>
+          <p><a href="{{ category[0] | lowecase }}">Ver todos</a>.</p>
+        </div>
+        <div>
           {% for post in category[1] %}
             {% include post-summary.html titletag="h3" %}
           {% endfor %}
